@@ -33,11 +33,11 @@
   </div>
   <div class="field">
     <%= f.label :comment_id %><br>
-    <%= f.number_field :comment_id %>
+    <%= f.select(:comment_id, @comments.map { |comment| [comment.content] }) %>
   </div>
   <div class="field">
     <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+    <%= f.select(:user_id, @users.map { |user| [user.email] }) %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -16,6 +16,8 @@ class PlacesController < ApplicationController
   # GET /places/new
   def new
     @place = Place.new
+    @users = User.all
+    @comments = Comment.all
   end
 
   # GET /places/1/edit
