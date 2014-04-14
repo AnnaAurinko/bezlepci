@@ -11,3 +11,8 @@
  *= require_self
  *= require_tree .
  */
+
+
+.container h1 {
+    font-family: "Trebuchet MS";
+}

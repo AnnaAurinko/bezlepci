@@ -1,39 +1,46 @@
-<h1>Listing places</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Address</th>
-      <th>Description</th>
-      <th>Rating</th>
-      <th>Comment</th>
-      <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+    <h1>Listing places</h1>
 
-  <tbody>
-    <% @places.each do |place| %>
+    <table class="table">
+      <thead>
       <tr>
-        <td><%= place.name %></td>
-        <td><%= place.specification %></td>
-        <td><%= place.address %></td>
-        <td><%= place.description %></td>
-        <td><%= place.rating %></td>
-        <td><%= place.comment_id %></td>
-        <td><%= place.user_id %></td>
-        <td><%= link_to 'Show', place %></td>
-        <td><%= link_to 'Edit', edit_place_path(place) %></td>
-        <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Address</th>
+        <th>Description</th>
+        <th>Rating</th>
+        <th>Comment</th>
+        <th>User</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      </thead>
 
-<br>
+      <tbody>
+      <% @places.each do |place| %>
+          <tr>
+            <td><%= place.name %></td>
+            <td><%= place.specification %></td>
+            <td><%= place.address %></td>
+            <td><%= place.description %></td>
+            <td><%= place.rating %></td>
+            <td><%= place.comment_id %></td>
+            <td><%= place.user_id %></td>
+            <td><%= link_to 'Show', place %></td>
+            <td><%= link_to 'Edit', edit_place_path(place) %></td>
+            <td><%= link_to 'Destroy', place, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
 
-<%= link_to 'New Place', new_place_path %>
+    <br>
+
+    <%= link_to 'New Place', new_place_path %>
+
+  </div>
+
+</div>
