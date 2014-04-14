@@ -32,7 +32,7 @@
         <% if current_user %>
             <li>Logged in as: <%= current_user.email %>| </li>
             <li class="active">
-              <%= link_to "Log out", destroy_user_session_path %>
+              <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
             </li>
         <% else %>
 
