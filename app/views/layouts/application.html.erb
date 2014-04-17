@@ -9,6 +9,7 @@
 
   <%= csrf_meta_tags %>
 </head>
+
 <body>
 
 
@@ -22,7 +23,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Bezlepková mapa</a>
+      <a class="navbar-brand" href="#">Bezlepci</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -46,8 +47,39 @@
   </div><!-- /.container-fluid -->
 </nav>
 
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-2"> Bezlepková mapa</div>
+</div>
+
+<div class="row">
+    <div class="col-md-6" id="search">hledat</div>
+    <div class="col-md-6">přidat</div>
+</div>
+
+<div class="row">
+  <div class="col-md-3">OBCHODY</div>
+  <div class="col-md-3">RESTAURACE</div>
+  <div class="col-md-3">KAVÁRNY</div>
+  <div class="col-md-3">PIVO</div>
+</div>
+
+
+
+
 <div class="container">
   <%= yield %>
+</div>
+
+<div class="row">
+    <div class="col-md-6">nová místa</div>
+    <div class="col-md-6">novinky</div>
+</div>
+
+<div class="row">
+  <div class="col-md-3">FAQ</div>
+  <div class="col-md-3">KONTAKTY</div>
+  <div class="col-md-3">NAPSALI O NÁS</div>
 </div>
 
 

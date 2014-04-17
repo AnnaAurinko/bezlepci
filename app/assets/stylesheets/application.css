@@ -16,3 +16,11 @@
 .container h1 {
     font-family: "Trebuchet MS";
 }
+
+/* tohle pak smazat*/
+
+*{
+    border: 1px dashed #3A5FCD;
+    font-family: "Trebuchet MS";
+}
+
