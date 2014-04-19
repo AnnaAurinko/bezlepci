@@ -17,11 +17,12 @@ class PlacesController < ApplicationController
   def new
     @place = Place.new
     @users = User.all
-    @comments = Comment.all
   end
 
   # GET /places/1/edit
   def edit
+    @place = Place.new
+    @users = User.all
   end
 
   # POST /places

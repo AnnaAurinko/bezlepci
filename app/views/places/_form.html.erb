@@ -1,45 +1,13 @@
-<%= form_for(@place) do |f| %>
-  <% if @place.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@place.errors.count, "error") %> prohibited this place from being saved:</h2>
+<form role="form">
+  <div class="form-group">
+    <%= simple_form_for @place do |f| %>
+        <%= f.input :name, label: "Název"%>
+        <%= f.input :specification, collection: ["Kavárna", "Pivo", "Restaurace", "Obchod"],label: "Typ místa"%>
+        <%= f.input :address, label: "Adresa" %>
+        <%= f.input :description, label: "Popisek" %>
+        <%= f.button :submit,  "Vytvořit!" %>
+    <% end %>
 
-      <ul>
-      <% @place.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :specification %><br>
-    <%= f.text_field :specification %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :rating %><br>
-    <%= f.number_field :rating %>
-  </div>
-  <div class="field">
-    <%= f.label :comment_id %><br>
-    <%= f.select(:comment_id, @comments.map { |comment| [comment.content] }) %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.select(:user_id, @users.map { |user| [user.email] }) %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</form>

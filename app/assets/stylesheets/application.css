@@ -19,8 +19,12 @@
 
 /* tohle pak smazat*/
 
-*{
-    border: 1px dashed #3A5FCD;
-    font-family: "Trebuchet MS";
-}
+/**{*/
+    /*border: 1px dashed #3A5FCD;*/
+    /*font-family: "Trebuchet MS";*/
+/*}*/
 
+.logged-in {
+    list-style: none;
+    margin-top: 15px;
+}
