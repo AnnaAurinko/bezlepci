@@ -6,6 +6,9 @@ gem 'rails', '4.0.0.rc2'
 # Přidá uživatele
 gem 'devise'
 
+# Přidá simple_form
+gem 'simple_form'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
