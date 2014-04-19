@@ -7,6 +7,11 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
+  <!--Google maps api-->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADb9Ens-Ba43DrmNw3qVRarj__l5wdE_g&sensor=true"></script>
+  <!--  Linking javascript file map.js -->
+  <%= javascript_include_tag "map" %>
+
   <%= csrf_meta_tags %>
 </head>
 
