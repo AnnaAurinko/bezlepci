@@ -9,6 +9,15 @@ gem 'devise'
 # Přidá simple_form
 gem 'simple_form'
 
+group :development, :test do
+  # Prida testovaci framework viz. http://rspec.info/ 
+  gem 'rspec-rails'
+  gem 'spring'
+  gem 'spring-commands-rspec'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+end
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
