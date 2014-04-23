@@ -14,9 +14,7 @@
         <th>Type</th>
         <th>Address</th>
         <th>Description</th>
-        <th>Rating</th>
-        <th>Comment</th>
-        <th>User</th>
+        <th>Author</th>
         <th></th>
         <th></th>
         <th></th>
@@ -30,8 +28,6 @@
             <td><%= place.specification %></td>
             <td><%= place.address %></td>
             <td><%= place.description %></td>
-            <td><%= place.rating %></td>
-            <td><%= place.comment_id %></td>
             <td><%= place.user_id %></td>
             <td><%= link_to 'Show', place %></td>
             <td><%= link_to 'Edit', edit_place_path(place) %></td>
