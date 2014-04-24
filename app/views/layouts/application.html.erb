@@ -30,6 +30,7 @@
       </button>
       <!--po kliknutí na logo přesměruje na titulní stránku mapy-->
       <a class="navbar-brand" href="/">Bezlepci</a>
+       <!--<%= image_tag "aa.JPG", class: "img" %> -->
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -62,17 +63,7 @@
   <div class="col-md-10 col-md-offset-2"> Bezlepková mapa</div>
 </div>
 
-<div class="row">
-    <div class="col-md-6" id="search">hledat</div>
-    <div class="col-md-6"><%= link_to 'Přidat nové místo', new_place_path %></div>
-</div>
 
-<div class="row">
-  <div class="col-md-3">OBCHODY</div>
-  <div class="col-md-3">RESTAURACE</div>
-  <div class="col-md-3">KAVÁRNY</div>
-  <div class="col-md-3">PIVO</div>
-</div>
 
 
 
@@ -81,10 +72,7 @@
   <%= yield %>
 </div>
 
-<div class="row">
-    <div class="col-md-6">nová místa</div>
-    <div class="col-md-6">novinky</div>
-</div>
+
 
 <div class="row">
   <div class="col-md-3">FAQ</div>

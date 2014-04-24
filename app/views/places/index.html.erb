@@ -1,9 +1,26 @@
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-  
-    <!-- This is the map -->
-    <div id="map-canvas"></div>
+  <div class="col-md-10 col-md-offset-1">
 
+
+    <div class="row">
+      <div class="col-md-6" id="search">hledat</div>
+      <div class="col-md-6"><%= link_to 'Přidat nové místo', new_place_path %></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">OBCHODY</div>
+      <div class="col-md-3">RESTAURACE</div>
+      <div class="col-md-3">KAVÁRNY</div>
+      <div class="col-md-3">PIVO</div>
+    </div>
+
+    <!-- This is the map -->
+    <div id="map-canvas" class="col-md-12"></div>
+
+    <div class="row">
+      <div class="col-md-6">nová místa</div>
+      <div class="col-md-6">novinky</div>
+    </div>
     
      <h1>Listing places</h1>
 
