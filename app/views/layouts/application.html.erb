@@ -18,25 +18,16 @@
 <body>
 
 
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+
+ 
+ 
       <!--po kliknutí na logo přesměruje na titulní stránku mapy-->
-      <a class="navbar-brand" href="/">Bezlepci</a>
-    </div>
+     <div class="row">
+          <div class="col-md-8">Bezlepci</div>
+          <div class="col-md-2">O nás</div>
+          <div class="col-md-2">
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-
-        <% if current_user %>
+                    <% if current_user %>
             <li class="active">
               <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
             </li>
@@ -50,12 +41,11 @@
         <% if current_user %>
             <li class="pull-right logged-in">Logged in as: <%= current_user.email %> </li>
         <% end %>
-      </ul>
+          </div>
+          
+      </div>
+      
 
-
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
 
 
 <div class="row">
