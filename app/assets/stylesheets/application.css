@@ -20,11 +20,57 @@
 /* tohle pak smazat*/
 
 /**{*/
-    /*border: 1px dashed #3A5FCD;*/
-    /*font-family: "Trebuchet MS";*/
+  /*border: 1px dashed #3A5FCD;*/
+  /*font-family: "Trebuchet MS";*/
 /*}*/
 
 .logged-in {
     list-style: none;
     margin-top: 15px;
+}
+
+#komplet {
+	width:;
+}
+
+#titulka    {
+	background-color: #EBE8D7;
+}
+
+
+#obchod {
+	background-color: #E3CCBA;
+	border-color: #E3CCBA;
+	height: 90px;
+}
+
+#restaurace{
+background-color: #AEAEA2;
+border-color: #AEAEA2;
+height: 90px;
+}
+
+#kafe {
+	background-color:#B0A166;
+	border-color: #B0A166;
+	height: 90px;
+}
+
+#pivo {
+	background-color:#91C0C8;
+	border-color:#91C0C8;
+	height: 90px;
+}
+
+#novamista{
+	height: 250px;
+}
+
+#novinky{
+	height: 250px;
+}
+
+#footer {
+	background-color: #AEAEA2;
+	height:250px;
 }

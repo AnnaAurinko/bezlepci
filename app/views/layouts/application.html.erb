@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="cz">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
   <title>Bezlepci</title>
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <!-- Bootstrap -->
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
@@ -13,9 +17,18 @@
   <%= javascript_include_tag "map" %>
 
   <%= csrf_meta_tags %>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 </head>
 
 <body>
+
+  <div id="komplet">
 
 
 
@@ -23,8 +36,9 @@
  
       <!--po kliknutí na logo přesměruje na titulní stránku mapy-->
      <div class="row">
-          <div class="col-md-8">Bezlepci</div>
-          <div class="col-md-2">O nás</div>
+          <div class="col-md-2"><h1 align="center">BEZLEPCI</h1></div>
+          <div class="col-md-6">Gingerbread candy icing lemon drops marshmallow croissant donut ice cream donut. Cookie halvah oat cake tiramisu macaroon gingerbread topping chocolate cake. Bear claw lollipop carrot cake tiramisu dragée lemon drops candy candy canes fruitcake. Carrot cake tootsie roll ice cream pastry sweet chocolate..</div>
+          <div class="col-md-2"><h3 align="center">O nás</h3></div>
           <div class="col-md-2">
 
                     <% if current_user %>
@@ -33,8 +47,8 @@
             </li>
         <% else %>
 
-            <li> <%= link_to "Registrovat se", new_user_registration_path %></li>
-            <li> <%= link_to "Přihlásit se", new_user_session_path %></li>
+            <p> <%= link_to "Registrovat se", new_user_registration_path %></p>
+            <p> <%= link_to "Přihlásit se", new_user_session_path %></p>
         <% end %>
       </ul>
       <ul>
@@ -47,41 +61,66 @@
       
 
 
-
+</br>
 <div class="row">
-  <div class="col-md-10 col-md-offset-2"> Bezlepková mapa</div>
+  <div class="col-md-12" id="titulka"> <h1 align="center">Bezlepková mapa<h1></div>
 </div>
-
+</br>
 <div class="row">
-    <div class="col-md-6" id="search">hledat</div>
-    <div class="col-md-6"><%= link_to 'Přidat nové místo', new_place_path %></div>
+    <div class="col-md-6" id="search"><h3 align="center">hledat</h3></div>
+    <div class="col-md-6"><h3 align="center"><%= link_to 'Přidat nové místo', new_place_path %></h3></div>
 </div>
-
+</br>
 <div class="row">
-  <div class="col-md-3">OBCHODY</div>
-  <div class="col-md-3">RESTAURACE</div>
-  <div class="col-md-3">KAVÁRNY</div>
-  <div class="col-md-3">PIVO</div>
+  <div class="col-md-3">
+    <button type="button" class="btn btn-primary btn-lg btn-block" id="obchod">OBCHODY</button>
+  </div>
+  <div class="col-md-3">
+    <button type="button" class="btn btn-primary btn-lg btn-block" id="restaurace">RESTAURACE</button>
+  </div>
+  <div class="col-md-3">
+    <button type="button" class="btn btn-primary btn-lg btn-block" id="kafe">KAVÁRNY</button>
+  </div>
+  <div class="col-md-3">
+    <button type="button" class="btn btn-primary btn-lg btn-block" id="pivo">PIVO</button>
+  </div>
 </div>
-
+</br>
 
 
 
 <div class="container">
   <%= yield %>
 </div>
-
+</br>
 <div class="row">
-    <div class="col-md-6">nová místa</div>
-    <div class="col-md-6">novinky</div>
+    <div class="col-md-6" id="novamista"><h3 align="center">nová místa</h3>
+      <ul>
+       <li>Marzipan apple pie topping biscuit marshmallow unerdwear.com muffin carrot cake. Carrot cake sweet caramels gummi bears.</li>
+        <li> Gummi bears pastry candy canes bonbon donut apple pie gummi bears cheesecake. Marshmallow icing chocolate. </li>
+        <li>Chocolate bar soufflé gummies applicake toffee. Cake tart muffin oat cake candy gummi bears icing. </li>
+      </ul>
+    </div>
+
+    <div class="col-md-6" id="novinky"><h3 align="center">novinky</h3>
+      <!--toto je jen pro představu pak smazat-->
+      <p>Bonbon gummi bears sugar plum lemon drops chocolate macaroon brownie jelly macaroon. Pie oat cake gummi bears liquorice. Cupcake sweet cotton candy danish. Jujubes liquorice gummies sugar plum soufflé ice cream. Carrot cake lemon drops dragée ice cream pudding. Topping jelly beans gummi bears tart biscuit toffee sweet roll gingerbread unerdwear.com. Topping lemon drops unerdwear.com.</p>
+      <p>Sweet roll sugar plum icing jelly beans. Brownie tart unerdwear.com bear claw. Biscuit chocolate cake croissant chocolate bar candy canes bear claw. Marzipan gingerbread bonbon jelly-o donut croissant dessert jujubes. Apple pie gummi bears candy. Halvah jelly-o cookie sesame snaps sweet roll. Fruitcake candy canes dessert pudding dessert gingerbread sesame snaps. Brownie dragée applicake.</p>
+
+    </div>
+</div>
+</br>
+<div class="row" id="footer">
+  <div class="col-md-4"><h3 align="center">FAQ</h3></div>
+  <div class="col-md-4"><h3 align="center">KONTAKTY</h3></div>
+  <div class="col-md-4"><h3 align="center">NAPSALI O NÁS</h3>
+    <ul>
+      <li>huffingtonpost.com</li>
+      <li>wikipedia.org</li>
+    </ul>
+  </div>
 </div>
 
-<div class="row">
-  <div class="col-md-3">FAQ</div>
-  <div class="col-md-3">KONTAKTY</div>
-  <div class="col-md-3">NAPSALI O NÁS</div>
 </div>
-
-
 </body>
 </html>
