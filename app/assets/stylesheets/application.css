@@ -21,7 +21,6 @@
 
 /**{*/
   /*border: 1px dashed #3A5FCD;*/
-  /*font-family: "Trebuchet MS";*/
 /*}*/
 
 .logged-in {
@@ -35,6 +34,8 @@
 
 #titulka    {
 	background-color: #EBE8D7;
+	height: 150px;
+
 }
 
 
@@ -42,24 +43,28 @@
 	background-color: #E3CCBA;
 	border-color: #E3CCBA;
 	height: 90px;
+	border-radius: 1px;
 }
 
 #restaurace{
 background-color: #AEAEA2;
 border-color: #AEAEA2;
 height: 90px;
+border-radius: 1px;
 }
 
 #kafe {
 	background-color:#B0A166;
 	border-color: #B0A166;
 	height: 90px;
+	border-radius: 1px;
 }
 
 #pivo {
 	background-color:#91C0C8;
 	border-color:#91C0C8;
 	height: 90px;
+	border-radius: 1px;
 }
 
 #novamista{
@@ -73,4 +78,9 @@ height: 90px;
 #footer {
 	background-color: #AEAEA2;
 	height:250px;
+}
+
+#komplet{
+	font-family: courier;
+	color: #333333;
 }
