@@ -6,6 +6,7 @@ FactoryGirl.define do
     last_name "Doe"
     password "12345678"
     password_confirmation "12345678"
+    admin false
   end
 
   factory :place do

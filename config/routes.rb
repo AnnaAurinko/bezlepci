@@ -3,6 +3,11 @@ Bezlepci::Application.routes.draw do
   resources :places
   resources :comments
   root to: 'places#index'
+
+  namespace "admin" do
+    resources :places
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
