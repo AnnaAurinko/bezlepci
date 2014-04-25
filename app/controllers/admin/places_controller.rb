@@ -1,4 +1,4 @@
-class Admin::PlaceController < ApplicationController
+class Admin::PlacesController < ApplicationController
   before_action :authorizate
 
   def index
@@ -6,9 +6,9 @@ class Admin::PlaceController < ApplicationController
   end
 
   private
-    def authorizate
-      unless current_user.admin
-        redirect_to root_path
-      end
+  def authorizate
+    unless current_user && current_user.admin
+      redirect_to root_path
     end
+  end
 end
