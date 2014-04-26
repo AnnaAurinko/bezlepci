@@ -19,7 +19,7 @@
 
 /* tohle pak smazat*/
 
-/**{*/
+/*{*/
   /*border: 1px dashed #3A5FCD;*/
 /*}*/
 
@@ -69,10 +69,12 @@ border-radius: 1px;
 
 #novamista{
 	height: 250px;
+	border:1px solid #AEAEA2;
 }
 
 #novinky{
 	height: 250px;
+	border:1px solid #AEAEA2;
 }
 
 #footer {
@@ -84,3 +86,4 @@ border-radius: 1px;
 	font-family: courier;
 	color: #333333;
 }
+
