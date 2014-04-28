@@ -35,6 +35,7 @@
 #titulka    {
 	background-color: #EBE8D7;
 	height: 150px;
+	text-align: center;
 
 }
 
@@ -87,3 +88,7 @@ border-radius: 1px;
 	color: #333333;
 }
 
+#tfheader {
+	text-align: center;
+
+}
