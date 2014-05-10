@@ -93,3 +93,9 @@ border-radius: 1px;
 	text-align: center;
 
 }
+
+.administration {
+  position: absolute;
+  bottom: 0;
+  right: 8px;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="cz">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<title>Bezlepci</title>
+<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+<%= csrf_meta_tags %>
+
+</head>
+
+<body>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Administration</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Places</a></li>
+        <li><a href="#">Users</a></li>
+        <li> <%= link_to "Log out", destroy_user_session_path, method: 'delete' %> </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+  <%= yield %>
+</div>
+
