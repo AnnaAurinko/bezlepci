@@ -6,6 +6,7 @@ class PlacesController < ApplicationController
   # GET /places.json
   def index
     @places = Place.all
+    @new_places = Place.all.sort_by(&:created_at).take(3)
   end
 
   # GET /places/1
