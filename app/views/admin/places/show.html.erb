@@ -20,20 +20,11 @@
   <%= @place.description %>
 </p>
 
-<p>
-  <strong>Rating:</strong>
-  <%= @place.rating %>
-</p>
 
 <p>
-  <strong>Comment:</strong>
-  <%= @place.comment_id %>
+  <strong>Author:</strong>
+  <%= User.find_by(@place.user_id).first_name %> <%= User.find_by(@place.user_id).last_name %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @place.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_place_path(@place) %> |
-<%= link_to 'Back', places_path %>
+<%= link_to 'Edit', edit_admin_place_path(@place) %> |
+<%= link_to 'Back', admin_places_path %>
