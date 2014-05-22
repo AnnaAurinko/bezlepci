@@ -1,11 +1,11 @@
 Bezlepci::Application.routes.draw do
-  get 'media/info'
-
-  get 'kontakty/info'
-
-  get 'faq/index'
-
   get 'pages/info'
+
+  get 'pages/kontakty'
+
+  get 'pages/media'
+
+  get 'pages/faq'
 
   devise_for :users
   resources :places

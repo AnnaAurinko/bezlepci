@@ -6,7 +6,7 @@ class PlacesControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
-    get :index
+    get :faq
     assert_response :success
     assert_not_nil assigns(:places)
   end
