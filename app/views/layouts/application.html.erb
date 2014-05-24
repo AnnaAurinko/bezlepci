@@ -10,10 +10,12 @@
   <!-- Bootstrap -->
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 
-  <!--Google maps api-->
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADb9Ens-Ba43DrmNw3qVRarj__l5wdE_g&sensor=true"></script>
-  <!--  Linking javascript file map.js -->
-  <%= javascript_include_tag "map" %>
+  <!--Google maps api
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADb9Ens-Ba43DrmNw3qVRarj__l5wdE_g&sensor=true"></script>-->
+
+  <!-- MapBox API -->
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.css' rel='stylesheet' />
 
   <%= csrf_meta_tags %>
 
