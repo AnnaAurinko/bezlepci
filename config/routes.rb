@@ -16,6 +16,10 @@ Bezlepci::Application.routes.draw do
     resources :places
   end
 
+  namespace "api" do
+    resources :places
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
