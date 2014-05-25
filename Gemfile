@@ -12,7 +12,11 @@ gem "simple_form", "~> 3.1.0.rc1"
 gem "sass-rails", ">= 3.2"
 gem "bootstrap-sass", "~> 3.1.1"
 
+# gem to serialize data into json for API (you know, for the map :)
 gem "active_model_serializers"
+
+# awesome data visualisation d3
+gem "d3-rails"
 
 # Geocoder for transforming address to coordinates
 gem "geocoder"
