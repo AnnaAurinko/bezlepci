@@ -62,12 +62,15 @@
 </div>
 </br>
 <div class="row">
-    <div class="col-md-6" id="novamista"><h3 align="center">nová místa</h3>
-      <ul>
-      <% @new_places.each do |place| %>
-        <li><%= place.name %>, <%= place.address %></li>
-      <% end %>
-      </ul>
+    <div class="col-md-6" id="novamista">
+      <div>
+        <h3 align="center">nová místa</h3>
+          <ul>
+              <% @new_places.each do |place| %>
+              <li><%= place.name %>, <%= place.address %></li>
+            <% end %>
+          </ul>
+      </div>
     </div>
     <div class="col-md-6" id="novinky"><h3 align="center">novinky</h3>
       <!--toto je jen pro představu pak smazat-->
