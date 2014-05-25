@@ -7,6 +7,7 @@ class PlacesController < ApplicationController
   def index
     @places = Place.all
     @new_places = Place.all.sort_by(&:created_at).take(3)
+ 
   end
 
   # GET /places/1
@@ -66,7 +67,31 @@ class PlacesController < ApplicationController
     end
   end
 
+  # create json files for sending data to the map
+  def create_json
+    @geojson = Array.new
+    @places.each do |place| 
+      @geojson << {
+        type: 'Feature',
+        geometry: {
+        type: 'Point',
+        coordinates: [place.longitude, place.latitude]
+      },
+      properties: {
+        name: place.name,
+        address: place.address,
+        :'marker-color' => '#00607d',
+        :'marker-symbol' => 'circle',
+        :'marker-size' => 'medium'
+      }
+    }
+    end
 
+    respond_to do |format|
+      format.html
+      format.json { render json: @geojson }  # respond with the created JSON object
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
