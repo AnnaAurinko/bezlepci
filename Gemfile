@@ -12,6 +12,9 @@ gem "simple_form", "~> 3.1.0.rc1"
 gem "sass-rails", ">= 3.2"
 gem "bootstrap-sass", "~> 3.1.1"
 
+# Geocoder for transforming address to coordinates
+gem "geocoder"
+
 group :development, :test do
   # Prida testovaci framework viz. http://rspec.info/ 
   gem "rspec-rails", "~> 2.14.2"
