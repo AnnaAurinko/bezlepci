@@ -46,9 +46,6 @@ end
 
 gem 'tzinfo-data'
 
-gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
-gem 'omniauth-openid', :git => 'git://github.com/intridea/omniauth-openid.git'
-
 # Use ActiveModel has_secure_password
 # gem "bcrypt-ruby", "~> 3.0.0"
 
