@@ -92,7 +92,7 @@ var geojson = {
 
 $.ajax({
   dataType: 'text',
-  url: 'places/happening_now',
+  url: 'api/places',
   success: function(data) {
     var geojson;
     geojson = $.parseJSON(data);

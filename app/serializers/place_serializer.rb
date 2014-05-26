@@ -7,7 +7,7 @@ class PlaceSerializer < ActiveModel::Serializer
   def geometry
     {
       type: "Point",
-      coordinates: [object.latitude, object.longitude]
+      coordinates: [object.longitude, object.latitude]
     }
   end
 
@@ -15,9 +15,9 @@ class PlaceSerializer < ActiveModel::Serializer
     {
       name: object.name,
       address: object.address,
-      "marker-color" => "#00607d",
-      "marker-symbol" => "circle",
-      "marker-size" => "medium"
+      "marker-color" => "#BF2E57",
+      "marker-symbol" => "bus",
+      "marker-size" => "large"
     }
   end
 end
