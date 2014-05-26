@@ -6,10 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first) 
    
-   User.destroy_all
+
    user = User.create(email: "admin@bezlepci.cz", first_name: "admin", last_name: "bezlepci", password: "napadroku", admin: true)
 
-   Place.destroy_all
+
 
    Place.create(address: "Manesova 8, Praha 2, 120 00", name: "Bezlepkova prodejna", specification: "shop", description: "Maloobchod s bezlepkovymi potravinami, otevreno denne od 8.00 do 18.00", user_id: user)
    Place.create(address: "U Zbojniku 12, Praha 10, 110 00", name: "Kavarna Marie", specification: "coffee", description: "Utulna kavarna se specializaci na bezlepkove dorty", user_id: user)

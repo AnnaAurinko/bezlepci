@@ -31,6 +31,13 @@
 </nav>
 
 <div class="container">
-  <%= yield %>
+  <div class="col-md-2">
+     <%= render 'stats' %>
+  </div>
+
+  <div class="col-md-10">
+    <%= yield %>
+  </div>
+
 </div>
 

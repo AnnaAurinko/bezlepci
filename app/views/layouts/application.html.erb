@@ -5,14 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
   <title>Bezlepci</title>
+
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <!-- Bootstrap -->
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 
-  <!--Google maps api-->
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADb9Ens-Ba43DrmNw3qVRarj__l5wdE_g&sensor=true"></script>
-  <!--  Linking javascript file map.js -->
-  <%= javascript_include_tag "map" %>
+  <!--Google maps api
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADb9Ens-Ba43DrmNw3qVRarj__l5wdE_g&sensor=true"></script>-->
+
+  <!-- MapBox API -->
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.css' rel='stylesheet' />
 
   <%= csrf_meta_tags %>
 
@@ -37,7 +40,7 @@
      <header class="row">
           <div class="col-md-2">
             <h1 align="center">
-              <a href="http://localhost:3000">BEZLEPCI</a>
+              <%= link_to "BEZLEPCI", places_path %>
             </h1>
           </div>
     <!--úvodní text-->
@@ -45,7 +48,7 @@
 <!--odkaz na stránku s informacema o projektu a tvůrcích-->
           <div class="col-md-2">
             <h3 align="center">
-              <a href="http://localhost:3000/pages/info">O nás</a>
+              <%= link_to "O NAS",pages_info_path %>
             </h3>
           </div>
 <!--tabulka s registrací- přihlašováním-->
@@ -94,7 +97,7 @@
 <div class="row" id="footer">
   <div class="col-md-4">
     <h3 align="center">
-      <a href="http://localhost:3000/faq/index">FAQ</a>
+      <%= link_to "FAQ",pages_faq_path %>
     </h3>
 
   <!-- vyhledávač na webu- zatím nastaveno na google -->
@@ -108,12 +111,13 @@
   </div>
   <div class="col-md-4">
     <h3 align="center">
-      <a href="http://localhost:3000/kontakty/info">KONTAKTY</a>
+     <%= link_to "KONTAKTY",pages_kontakty_path %>
+
     </h3>
   </div>
   <div class="col-md-4">
     <h3 align="center">
-       <a href="http://localhost:3000/media/info">NAPSALI O NÁS</a>
+      <%= link_to "NAPSALI O NAS",pages_media_path %>
      </h3>
     <ul>
       <li>huffingtonpost.com</li>

@@ -7,6 +7,7 @@ class PlacesController < ApplicationController
   def index
     @places = Place.all
     @new_places = Place.all.sort_by(&:created_at).take(3)
+ 
   end
 
   # GET /places/1
@@ -67,7 +68,6 @@ class PlacesController < ApplicationController
   end
 
 
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_place
@@ -76,6 +76,6 @@ class PlacesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def place_params
-      params.require(:place).permit(:name, :type, :address, :description, :rating, :comment_id, :user_id)
+      params.require(:place).permit(:name, :type, :address, :description, :rating, :comment_id, :user_id, :latitude, :longitude)
     end
 end

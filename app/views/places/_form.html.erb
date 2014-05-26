@@ -4,6 +4,10 @@
         <%= f.input :name, label: "Název"%>
         <%= f.input :specification, collection: ["Kavárna", "Pivo", "Restaurace", "Obchod"],label: "Typ místa"%>
         <%= f.input :address, label: "Adresa" %>
+        <!-- 
+        <%= f.input :latitude, label: "Latitude" %>
+        <%= f.input :longitude, label: "Longitude" %>
+         -->
         <%= f.input :description, label: "Popisek" %>
         <%= f.button :submit,  "Vytvořit!" %>
     <% end %>

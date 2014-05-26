@@ -14,3 +14,38 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+## OSX files
+## https://github.com/github/gitignore/blob/master/Global/OSX.gitignore
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+## Linux files
+## https://github.com/github/gitignore/blob/master/Global/Linux.gitignore
+
+# Backup files
+*~
+# KDE directory preferences
+.directory
+
+## Windows files
+## https://github.com/github/gitignore/blob/master/Global/Windows.gitignore
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+

@@ -1,11 +1,11 @@
 Bezlepci::Application.routes.draw do
-  get 'media/info'
-
-  get 'kontakty/info'
-
-  get 'faq/index'
-
   get 'pages/info'
+
+  get 'pages/kontakty'
+
+  get 'pages/media'
+
+  get 'pages/faq'
 
   devise_for :users
   resources :places
@@ -13,6 +13,10 @@ Bezlepci::Application.routes.draw do
   root to: 'places#index'
 
   namespace "admin" do
+    resources :places
+  end
+
+  namespace "api" do
     resources :places
   end
 

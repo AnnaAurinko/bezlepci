@@ -1,10 +1,12 @@
 /*
  *= require bootstrap
  *= require_self
+ *= require c3
  *= require_tree .
  */
 
-.container h1 {
+.container
+  h1 {
   // Microsofti font ktery jinde neni
   font-family: "Trebuchet MS", "sans-serif";
 }
