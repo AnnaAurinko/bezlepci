@@ -14,13 +14,13 @@
      <button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-search"></span></button>
     </div>
     
-<div class="col-md-6"><h3 align="center"><%= link_to 'Přidat nové místo', new_place_path %></h3></div>
+<div class="col-md-6"><h3 align="center" data-toggle="tooltip" data-placement="top" title="Kliknutím sem můžete zadat na mapu své oblíbené bezlepkové místo"><%= link_to 'Přidat nové místo', new_place_path %></h3></div>
 </div>
 </br>
 <!--buttony-->
 <div class="row">
   <div class="col-md-3">
-    <button type="button" class="btn btn-primary btn-lg btn-block dropdown-toggle" data-toggle="dropdown" id="obchod">OBCHODY</button>
+    <button type="button" class="btn btn-primary btn-lg btn-block dropdown-toggle" data-toggle="dropdown" id="obchod" >OBCHODY</button>
     <ul class="dropdown-menu dropdown-menu-right">
       <li><a href="#">Bezlepkové obchody</a></li>
       <li><a href="#">Rozšířená nabídka BL</a></li>
@@ -75,7 +75,7 @@
       <p>Sweet roll sugar plum icing jelly beans. Brownie tart une sweet roll. Fruitcake candy canes dessert pudding dessert gingerbread sesame snaps. Brownie dragée applicake.</p>
       <br>
        <ul class="pager">
-          <li class="next"><a href="#">Dřívější &rarr;</a></li>
+          <li class="next"><a href="#"><%= link_to "Dřívější",actualities_path %></a></li>
         </ul>
 
 

@@ -1,0 +1,2 @@
+module ActualitiesHelper
+end

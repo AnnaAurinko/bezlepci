@@ -1,4 +1,8 @@
 Bezlepci::Application.routes.draw do
+  resources :actualities
+
+  resources :novinkies
+
   get 'pages/info'
 
   get 'pages/kontakty'

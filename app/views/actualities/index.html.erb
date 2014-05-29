@@ -1,0 +1,27 @@
+<h1>Co se stalo nového</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @actualities.each do |actuality| %>
+      <tr>
+        <td><%= actuality.title %></td>
+        <td><%= actuality.body %></td>
+        <td><%= link_to 'Show', actuality %></td>
+        <td><%= link_to 'Edit', edit_actuality_path(actuality) %></td>
+        <td><%= link_to 'Destroy', actuality, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Actuality', new_actuality_path %>
