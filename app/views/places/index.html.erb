@@ -9,9 +9,9 @@
     <div class="col-md-6">
       </br>
       <div class="col-xs-10">
-        <input type="text" class="form-control" placeholder="Zadej adresu">
+        <input class="form-control input-lg" type="text" placeholder="Zadej adresu">
      </div>
-     <button type="button" class="btn btn-default">Hledej!</button>
+     <button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-search"></span></button>
     </div>
     
 <div class="col-md-6"><h3 align="center"><%= link_to 'Přidat nové místo', new_place_path %></h3></div>
@@ -20,10 +20,22 @@
 <!--buttony-->
 <div class="row">
   <div class="col-md-3">
-    <button type="button" class="btn btn-primary btn-lg btn-block" id="obchod">OBCHODY</button>
+    <button type="button" class="btn btn-primary btn-lg btn-block dropdown-toggle" data-toggle="dropdown" id="obchod">OBCHODY</button>
+    <ul class="dropdown-menu dropdown-menu-right">
+      <li><a href="#">Bezlepkové obchody</a></li>
+      <li><a href="#">Rozšířená nabídka BL</a></li>
+      <li><a href="#">Základní nabídka BL</a></li>
+      <li><a href="#">Farmářské trhy</a></li>
+    </ul>
   </div>
   <div class="col-md-3">
-    <button type="button" class="btn btn-primary btn-lg btn-block" id="restaurace">RESTAURACE</button>
+    <button type="button" class="btn btn-primary btn-lg btn-block dropdown-toggle" data-toggle="dropdown" id="restaurace">RESTAURACE</button><ul class="dropdown-menu dropdown-menu-right">
+      <li><a href="#">Bezlepkové</a></li>
+      <li><a href="#">Pizzerie</a></li>
+      <li><a href="#">Palačinkárna</a></li>
+      <li><a href="#">Vstřícné k BL</a></li>
+      <li><a href="#">Pro děti</a></li>
+    </ul>
   </div>
   <div class="col-md-3">
     <button type="button" class="btn btn-primary btn-lg btn-block" id="kafe">KAVÁRNY</button>
@@ -61,6 +73,11 @@
       <!--toto je jen pro představu pak smazat-->
       <p>Bonbon gummi bears sugar plum lemon drops chocolate macaroon brownie jelly macaroon. Pie oat cake gummi bears liquorice. Cupcake sweet cotton candy danish. Jujuear.com.</p>
       <p>Sweet roll sugar plum icing jelly beans. Brownie tart une sweet roll. Fruitcake candy canes dessert pudding dessert gingerbread sesame snaps. Brownie dragée applicake.</p>
+      <br>
+       <ul class="pager">
+          <li class="next"><a href="#">Dřívější &rarr;</a></li>
+        </ul>
+
 
     </div>
 </div>
