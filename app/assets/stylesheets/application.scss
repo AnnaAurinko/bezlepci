@@ -17,7 +17,7 @@
 }
 
 #komplet {
-	// width:;
+	background-color: #FFFFFF;
 }
 
 
@@ -25,51 +25,64 @@
 	background-color: #EBE8D7;
 	height: 150px;
 	text-align: center;
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px #888888;
 
+}
+
+#search {
+	box-shadow: 2px 2px 2px #888888;
 }
 
 
 #obchod {
-	background-color: #E3CCBA;
-	border-color: #E3CCBA;
+	background-color: #C86F73;
+	border-color: #C86F73;
 	height: 90px;
-	border-radius: 1px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px #888888;
 }
 
 #restaurace{
-background-color: #AEAEA2;
-border-color: #AEAEA2;
-height: 90px;
-border-radius: 1px;
+	background-color: #717135;
+	border-color: #717135;
+	height: 90px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px #888888;
 }
 
 #kafe {
-	background-color:#B0A166;
-	border-color: #B0A166;
+	background-color:#725421;
+	border-color: #725421;
 	height: 90px;
-	border-radius: 1px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px #888888;
 }
 
 #pivo {
-	background-color:#91C0C8;
-	border-color:#91C0C8;
+	background-color:#2F7582;
+	border-color:#2F7582;
 	height: 90px;
-	border-radius: 1px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px #888888;
 }
 
 #novamista{
 	height: 250px;
 	border:1px solid #AEAEA2;
+	border-radius: 10px;
 }
 
 #novinky{
 	height: 250px;
 	border:1px solid #AEAEA2;
+	border-radius: 10px;
 }
 
 #footer {
 	background-color: #AEAEA2;
 	height:250px;
+	border-radius: 10px;
 }
 
 #komplet{
@@ -86,4 +99,10 @@ border-radius: 1px;
   position: absolute;
   bottom: 0;
   right: 8px;
+}
+
+#map-canvas {
+border-radius: 10px;
+box-shadow: 2px 2px 2px #888888;
+	
 }
