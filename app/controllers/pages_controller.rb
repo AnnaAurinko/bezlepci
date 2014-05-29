@@ -2,7 +2,6 @@ class PagesController < ApplicationController
   def info
   end
 
-
   def kontakty
   end
 

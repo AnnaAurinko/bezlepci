@@ -15,4 +15,10 @@ FactoryGirl.define do
     address "Manesova 25, Praha 1, 110 00"
     description "Nejlepsi bio restaurace v sirokem okoli!"
   end
+
+  factory :actuality do
+    title "MyString"
+    body "MyText"
+  end
+
 end
