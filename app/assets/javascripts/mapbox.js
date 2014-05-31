@@ -124,15 +124,6 @@ map.featureLayer.on('layeradd', function(e) {
   });
 });
 
-map.featureLayer.on('ready', function(e) {
-    // The clusterGroup gets each marker in the group added to it
-    // once loaded, and then is added to the map
-    var clusterGroup = new L.MarkerClusterGroup();
-    e.target.eachLayer(function(layer) {
-        clusterGroup.addLayer(layer);
-    });
-    map.addLayer(clusterGroup);
-});
 
 ////////////////////////////////////////
 // Mouseover popup
