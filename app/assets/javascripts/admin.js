@@ -5,6 +5,7 @@ var map;
 var zoom = 14;
 var markerLat = $("#map-canvas-admin").attr("latitude")
 var markerLon = $("#map-canvas-admin").attr("longitude")
+var name = $("#map-canvas-admin").attr("name")
 
 
 ////////////////////////////////////////
@@ -24,10 +25,9 @@ L.mapbox.featureLayer({
         coordinates: [markerLon, markerLat ]
     },
     properties: {
-        title: 'name',
-        description: 'description',
+        title: name,
         'marker-size': 'large',
-        'marker-color': "#BF2E57",
+        'marker-color': "#8D6FAB",
         'marker-symbol': 'star'
     }
 }).addTo(map);

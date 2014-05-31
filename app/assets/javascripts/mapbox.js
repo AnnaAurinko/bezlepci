@@ -15,80 +15,11 @@ var geolocate = document.getElementById('geolocate');
 map = L.mapbox.map('map-canvas', 'examples.map-i86nkdio')
     .setView([mapCenterX, mapCenterY], zoom);
 
-	//search for adress tool
-	/*map.addControl(L.mapbox.geocoderControl('examples.map-i875kd35', {
-        keepOpen: true
-    }));*/
-
-
-////////////////////////////////////////
-// Adding point geojson layer
-
-var myLayer = L.mapbox.featureLayer().addTo(map);
-
-var geojson = {
-    type: 'FeatureCollection',
-    features: [{
-        type: 'Feature',
-        properties: {
-            title: 'Obchody',
-            'marker-color': '#f86767',
-            'marker-size': 'large',
-            'marker-symbol': 'shop'
-        },
-        geometry: {
-            type: 'Point',
-            coordinates: [14.4167725, 50.0807878]
-        }
-    },
-    {
-        type: 'Feature',
-        properties: {
-            title: 'Restaurace',
-            'marker-color': '#b76ca7',
-            'marker-size': 'large',
-            'marker-symbol': 'fast-food'
-        },
-        geometry: {
-            type: 'Point',
-            coordinates: [14.4276978, 50.0929300]
-        }
-    },
-    {
-        type: 'Feature',
-        properties: {
-            title: 'Kavárny',
-            'marker-color': '#7ec9b1',
-            'marker-size': 'large',
-            'marker-symbol': 'cafe'
-        },
-        geometry: {
-            type: 'Point',
-            coordinates: [14.4038744, 50.0884569]
-        }
-    },
-    {
-        type: 'Feature',
-        properties: {
-            title: 'Pivo',
-            'marker-color': '#fa0',
-            'marker-size': 'large',
-            'marker-symbol': 'bar'
-        },
-        geometry: {
-            type: 'Point',
-            coordinates: [14.4161803, 50.0789139]
-        }
-    }]
-};
 
 
 ////////////////////////////////////////
 // Load JSON object
 
-// get JSON object
-// on success, parse it and 
-// hand it over to MapBox for mapping 
 
 $.ajax({
   dataType: 'text',
@@ -108,11 +39,9 @@ map.featureLayer.on('layeradd', function(e) {
   var marker, popupContent, properties;
   marker = e.layer;
   properties = marker.feature.properties;
-  popupContent =    '<div class="infowindow">' + 
-                        '<h3>' + properties.name + '</h3>' + 
-                        '<p>' +  properties.description + '</p>' + 
-                        '<p>' +  properties.address + '</p>' + 
-                    '</div>';
+  popupContent =    '<div class="marker-title">'  + properties.name +  '</div>' + 
+                    '<div class="marker-description">'  + properties.description +  '</div>' +
+                    '<div class="marker-description">' + '<i>' + properties.address + '</i>' +  '</div>';
   return marker.bindPopup(popupContent, {
     closeButton: false,
     minWidth: 150,
@@ -126,26 +55,10 @@ map.featureLayer.on('layeradd', function(e) {
 
 
 ////////////////////////////////////////
-// Mouseover popup
-
-myLayer.setGeoJSON(geojson);
-myLayer.on('mouseover', function(e) {
-    e.layer.openPopup();
-});
-myLayer.on('mouseout', function(e) {
-    e.layer.closePopup();
-});
-
-
-
-////////////////////////////////////////
 // Geolocation of my location (moje poloha)
 
-// This uses the HTML5 geolocation API, which is available on
-// most mobile browsers and modern browsers, but not in Internet Explorer
-//
-// See this chart of compatibility for details:
-// http://caniuse.com/#feat=geolocation
+var myLayer = L.mapbox.featureLayer().addTo(map);
+
 if (!navigator.geolocation) {
     geolocate.innerHTML = 'Geolocation is not available';
 } else {
@@ -168,14 +81,14 @@ map.on('locationfound', function(e) {
             coordinates: [e.latlng.lng, e.latlng.lat]
         },
         properties: {
-            'title': 'Tady jsem :)',
-            'marker-color': '#ff8888',
-            'marker-symbol': 'star'
+            'marker-color': '#3887BE',
+            'marker-symbol': 'star',
+            'marker-size' : 'medium'
         }
     });
 
-    // And hide the geolocation button
-    geolocate.parentNode.removeChild(geolocate);
+    // hide the geolocation button
+    //geolocate.parentNode.removeChild(geolocate);
 });
 
 // If the user chooses not to allow their location
