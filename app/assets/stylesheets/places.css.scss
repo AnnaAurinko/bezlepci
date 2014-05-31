@@ -2,11 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* map styling */
+/* Map */
  #map-canvas { 
  	height: 400px 
  }
 
+/* Map elements */
 .find-ui {
   	background:#3887BE;
   	color:#FFF;
@@ -37,4 +38,8 @@
  }
 
 
-
+/* Info window*/
+.leaflet-container .infowindow p {
+  font-size: 12px;
+  font-family: Verdana, Arial;
+}

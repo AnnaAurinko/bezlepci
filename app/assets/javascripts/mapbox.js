@@ -108,16 +108,31 @@ map.featureLayer.on('layeradd', function(e) {
   var marker, popupContent, properties;
   marker = e.layer;
   properties = marker.feature.properties;
-  popupContent =    '<div>' + 
+  popupContent =    '<div class="infowindow">' + 
                         '<h3>' + properties.name + '</h3>' + 
+                        '<p>' +  properties.description + '</p>' + 
                         '<p>' +  properties.address + '</p>' + 
                     '</div>';
   return marker.bindPopup(popupContent, {
     closeButton: false,
     minWidth: 150,
+    maxHeight: 280,
+    autoPan: true,
+    autoPanPaddingTopLeft: 20,
+    autoPanPaddingBottomRight: 20,
+    zoomAnimation: true
   });
 });
 
+map.featureLayer.on('ready', function(e) {
+    // The clusterGroup gets each marker in the group added to it
+    // once loaded, and then is added to the map
+    var clusterGroup = new L.MarkerClusterGroup();
+    e.target.eachLayer(function(layer) {
+        clusterGroup.addLayer(layer);
+    });
+    map.addLayer(clusterGroup);
+});
 
 ////////////////////////////////////////
 // Mouseover popup
