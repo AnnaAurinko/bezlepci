@@ -102,6 +102,24 @@ $.ajax({
 
 
 ////////////////////////////////////////
+// Info Window
+
+map.featureLayer.on('layeradd', function(e) {
+  var marker, popupContent, properties;
+  marker = e.layer;
+  properties = marker.feature.properties;
+  popupContent =    '<div>' + 
+                        '<h3>' + properties.name + '</h3>' + 
+                        '<p>' +  properties.address + '</p>' + 
+                    '</div>';
+  return marker.bindPopup(popupContent, {
+    closeButton: false,
+    minWidth: 150,
+  });
+});
+
+
+////////////////////////////////////////
 // Mouseover popup
 
 myLayer.setGeoJSON(geojson);
