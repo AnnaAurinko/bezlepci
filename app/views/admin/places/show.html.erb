@@ -30,11 +30,14 @@
   <%= @place.longitude %>
 </p>
 
-
 <p>
   <strong>Author:</strong>
   <%= User.find_by(@place.user_id).first_name %> <%= User.find_by(@place.user_id).last_name %>
 </p>
+
+<div id="map-canvas-admin" latitude="<%= @place.latitude %>" longitude="<%= @place.longitude %>">
+<%= javascript_include_tag "admin" %>
+</div>
 
 <%= link_to 'Edit', edit_admin_place_path(@place) %> |
 <%= link_to 'Back', admin_places_path %>
