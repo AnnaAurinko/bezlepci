@@ -28,6 +28,8 @@ group :development, :test do
   gem "spring-commands-rspec"
   gem "factory_girl_rails", "~> 4.4.0"
   gem "database_cleaner", "~> 1.2.0"
+  gem "pry-rails"
+  gem "pry-nav"
 end
 
 # Use sqlite3 as the database for Active Record

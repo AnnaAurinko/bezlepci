@@ -6,7 +6,7 @@ class PlacesController < ApplicationController
   # GET /places.json
   def index
     @places = Place.all
-    @new_places = Place.all.sort_by(&:created_at).take(3)
+    @new_places = Place.all.sort_by(&:created_at).reverse.take(8)
  
   end
 
@@ -31,13 +31,12 @@ class PlacesController < ApplicationController
   # POST /places.json
   def create
     @place = Place.new(place_params)
-
     respond_to do |format|
       if @place.save
-        format.html { redirect_to @place, notice: 'Place was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @place }
+        format.html { redirect_to places_path, notice: 'Place was successfully created.' }
+        format.json { render action: 'index', status: :created, location: @place }
       else
-        format.html { render action: 'new' }
+        format.html { render action: 'new', notice: "Something went wrong: #{@place.errors}" }
         format.json { render json: @place.errors, status: :unprocessable_entity }
       end
     end
@@ -48,7 +47,7 @@ class PlacesController < ApplicationController
   def update
     respond_to do |format|
       if @place.update(place_params)
-        format.html { redirect_to @place, notice: 'Place was successfully updated.' }
+        format.html { redirect_to places_path, notice: 'Place was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -76,6 +75,6 @@ class PlacesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def place_params
-      params.require(:place).permit(:name, :type, :address, :description, :rating, :comment_id, :user_id, :latitude, :longitude)
+      params.require(:place).permit(:name, :specification, :address, :description, :user_id)
     end
 end

@@ -1,8 +1,8 @@
-    <%= simple_form_for @place do |f| %>
-        <%= f.input :name, label: "Název", class: "form-control"%>
-        <%= f.input :specification, collection: ["Kavárna", "Pivo", "Restaurace", "Obchod"],label: "Typ místa"%>
-        <%= f.input :address, label: "Adresa" %>
-        <%= f.input :description, label: "Popisek" %>
-        <%= f.button :submit,  "Vytvořit!" %>
-    <% end %>
+<%= simple_form_for [:admin, @place] do |f| %>
+    <%= f.input :name, label: "Název", class: "form-control" %>
+    <%= f.input :specification, collection: ["Kavárna", "Pivo", "Restaurace", "Obchod"], label: "Typ místa" %>
+    <%= f.input :address, label: "Adresa" %>
+    <%= f.input :description, label: "Popisek" %>
+    <%= f.button :submit, "Vytvořit!" %>
+<% end %>
 

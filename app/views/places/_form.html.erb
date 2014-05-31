@@ -1,17 +1,9 @@
-<form role="form">
-  <div class="form-group">
-    <%= simple_form_for @place do |f| %>
-        <%= f.input :name, label: "Název"%>
-        <%= f.input :specification, collection: ["Kavárna", "Pivo", "Restaurace", "Obchod"],label: "Typ místa"%>
-        <%= f.input :address, label: "Adresa" %>
-        <!-- 
-        <%= f.input :latitude, label: "Latitude" %>
-        <%= f.input :longitude, label: "Longitude" %>
-         -->
-        <%= f.input :description, label: "Popisek" %>
-        <%= f.button :submit,  "Vytvořit!" %>
-    <% end %>
-
-  </div>
-
-</form>
+<div class="form-group">
+  <%= simple_form_for @place do |f| %>
+      <%= f.input :name, label: "Název" %>
+      <%= f.input :specification, collection: ["Kavárna", "Pivo", "Restaurace", "Obchod"], label: "Typ místa" %>
+      <%= f.input :address, label: "Adresa" %>
+      <%= f.input :description, label: "Popisek" %>
+      <%= f.button :submit, "Vytvořit!" %>
+  <% end %>
+</div>
