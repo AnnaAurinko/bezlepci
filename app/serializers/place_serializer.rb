@@ -15,8 +15,9 @@ class PlaceSerializer < ActiveModel::Serializer
     {
       name: object.name,
       address: object.address,
+      description: object.description,
       "marker-color" => "#BF2E57",
-      "marker-symbol" => "bus",
+      "marker-symbol" => "dog-park",
       "marker-size" => "large"
     }
   end
