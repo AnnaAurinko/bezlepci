@@ -6,8 +6,7 @@ class PlacesController < ApplicationController
   # GET /places.json
   def index
     @places = Place.all
-    @new_places = Place.all.sort_by(&:created_at).reverse.take(8)
- 
+    @new_places = Place.order('created_at DESC').limit(8)
   end
 
   # GET /places/1
