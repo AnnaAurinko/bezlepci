@@ -13,7 +13,7 @@ class PlaceSerializer < ActiveModel::Serializer
 
   def properties
     case object.specification
-    when "beer"
+    when "Pivo"
       {
       name: object.name,
       address: object.address,
@@ -23,7 +23,7 @@ class PlaceSerializer < ActiveModel::Serializer
       "marker-size" => "medium"
       }
 
-    when "shop"
+    when "Obchod"
         {
         name: object.name,
         address: object.address,
@@ -33,7 +33,7 @@ class PlaceSerializer < ActiveModel::Serializer
         "marker-size" => "medium"
       }
 
-    when "coffee"
+    when "Kavarna"
         {
         name: object.name,
         address: object.address,
