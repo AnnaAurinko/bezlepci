@@ -8,32 +8,25 @@
  }
 
 /* Map elements */
-.find-ui {
-  	background:#3887BE;
-  	color:#FFF;
-  	display:block;
-  	position:absolute;
-  	top:90%;
-  	left:3%;
-  	width:100px;
-    height: 30px;  	
-  	z-index:100;
-  	text-align:center;
-  	padding-top:5px;
-    padding-bottom: 7px;
-  	border:1px solid rgba(0,0,0,0.4);
-  	border-radius:3px;
-  }
-
-.find-ui:hover {
-    background:#3074a4;
-    color:#fff;
-    text-decoration: none;
- }
-
 .search-ui {
   	position:absolute;
   	top:10px;
   	right:20px;
   	z-index:1000;
  }
+
+.leaflet-control-locate {
+    border:1px solid rgba(0,0,0,.75);
+}
+
+.leaflet-control-locate a {
+    background-color:#fff;
+    background-size:19px 19px;
+    background-image:url("map-marker.png");
+    background-repeat:no-repeat;
+    background-position:center center;
+}
+
+.leaflet-control-locate.active a {
+    background-image:url("map-marker-active.png");
+}

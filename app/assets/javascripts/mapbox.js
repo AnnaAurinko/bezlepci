@@ -14,7 +14,7 @@ var geolocate = document.getElementById('geolocate');
 
 map = L.mapbox.map('map-canvas', 'examples.map-i86nkdio')
     .setView([mapCenterX, mapCenterY], zoom);
-
+    L.control.locate().addTo(map);
 
 
 ////////////////////////////////////////
@@ -52,51 +52,6 @@ map.featureLayer.on('layeradd', function(e) {
     zoomAnimation: true
   });
 });
-
-
-////////////////////////////////////////
-// Geolocation of my location (moje poloha)
-
-var myLayer = L.mapbox.featureLayer().addTo(map);
-
-if (!navigator.geolocation) {
-    geolocate.innerHTML = 'Geolocation is not available';
-} else {
-    geolocate.onclick = function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        map.locate();
-    };
-}
-
-// Once we've got a position, zoom and center the map
-// on it, and add a single marker.
-map.on('locationfound', function(e) {
-    map.fitBounds(e.bounds);
-
-    myLayer.setGeoJSON({
-        type: 'Feature',
-        geometry: {
-            type: 'Point',
-            coordinates: [e.latlng.lng, e.latlng.lat]
-        },
-        properties: {
-            'marker-color': '#3887BE',
-            'marker-symbol': 'star',
-            'marker-size' : 'medium'
-        }
-    });
-
-    // hide the geolocation button
-    //geolocate.parentNode.removeChild(geolocate);
-});
-
-// If the user chooses not to allow their location
-// to be shared, display an error message.
-map.on('locationerror', function() {
-    geolocate.innerHTML = 'něco je špatně :( nemohu určit tvojí polohu';
-});
-
 
 
 ////////////////////////////////////////
