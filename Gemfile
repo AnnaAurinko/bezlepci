@@ -21,6 +21,9 @@ gem "d3-rails"
 # Geocoder for transforming address to coordinates
 gem "geocoder"
 
+# Tracking errors
+gem "trackets"
+
 group :development, :test do
   # Prida testovaci framework viz. http://rspec.info/ 
   gem "rspec-rails", "~> 2.14.2"
