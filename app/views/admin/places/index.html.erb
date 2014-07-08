@@ -26,7 +26,7 @@
       <td><%= place.latitude %></td>
       <td><%= place.longitude %></td>
       <td><%= place.description %></td>
-      <td><%= place.user_id %></td>
+      <td><%= User.find(place.user_id).email if place.user_id %></td>
       <td><%= link_to 'Show', admin_place_path(place) %></td>
       <td><%= link_to 'Edit', edit_admin_place_path(place) %></td>
       <td><%= link_to 'Destroy', admin_place_path(place), method: :delete, data: {confirm: 'Are you sure?'} %></td>

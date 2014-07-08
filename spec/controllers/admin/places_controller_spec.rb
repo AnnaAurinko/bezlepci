@@ -3,7 +3,7 @@ require "spec_helper"
 describe Admin::PlacesController do
   describe "GET index" do
     it "denies non-admin access" do
-      get :faq
+      get :index
       expect(response).to be_redirect
     end
 
@@ -12,8 +12,8 @@ describe Admin::PlacesController do
 
       sign_in user
 
-      get :faq
-      expect(response).to render_template(:faq)
+      get :index
+      expect(response).to render_template(:index)
     end
   end
 end

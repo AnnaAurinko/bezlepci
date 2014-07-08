@@ -175,7 +175,7 @@ GEM
     thread_safe (0.3.3)
     tilt (1.4.1)
     timers (1.1.0)
-    trackets (0.0.5)
+    trackets (0.0.6)
       httparty (~> 0.13)
       json
       rack

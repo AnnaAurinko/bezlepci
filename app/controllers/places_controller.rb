@@ -30,6 +30,24 @@ class PlacesController < ApplicationController
   def create
     @place = Place.new(place_params)
     @place.tag_list = params[:tag_list]
+    restaurants = ["Bezlepkové", "Pizzerie", "Palačinkárna", "Vstřícné k BL", "Pro děti"]
+    shops = ["Bezlepkové obchody", "Rozšířená nabídka BL", "Základní nabídka BL", "Farmářské trhy"]
+
+    if params[:tag_list]
+      restaurants.each do |tag|
+        if params[:tag_list].include?(tag)
+          @place.tag_list << "Restaurace" 
+        end
+      end
+
+      shops.each do |tag|
+        if params[:tag_list].include?(tag)
+          @place.tag_list << "Obchod"
+        end
+      end
+    end
+   
+
     @place.user_id = current_user.id if current_user
 
     respond_to do |format|
