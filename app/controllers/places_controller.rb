@@ -1,36 +1,37 @@
 # encoding: utf-8
 class PlacesController < ApplicationController
-  before_action :set_place, only: [:show, :edit, :update, :destroy]
+  before_action :set_place, only: [:show]
+  before_action :authenticate!, only: [:create, :new]
 
   # GET /places
-  # GET /places.json
   def index
     @places = Place.all
     @new_places = Place.all.sort_by(&:created_at).reverse.take(8)
- 
   end
 
   # GET /places/1
-  # GET /places/1.json
   def show
   end
 
   # GET /places/new
   def new
-    @place = Place.new
-    @users = User.all
-  end
+    @tags = {
+      'Restaurace'  => ["Bezlepkové", "Pizzerie", "Palačinkárna", "Vstřícné k BL", "Pro děti"],
+      'Obchod' => ["Bezlepkové obchody", "Rozšířená nabídka BL", "Základní nabídka BL", "Farmářské trhy"], 
+      'Pivo' => ["Pivo"],
+      'Kavarny' => ["Kavarny"]
+    }
 
-  # GET /places/1/edit
-  def edit
     @place = Place.new
     @users = User.all
   end
 
   # POST /places
-  # POST /places.json
   def create
     @place = Place.new(place_params)
+    @place.tag_list = params[:tag_list]
+    @place.user_id = current_user.id if current_user
+
     respond_to do |format|
       if @place.save
         format.html { redirect_to places_path, notice: 'Place was successfully created.' }
@@ -42,31 +43,6 @@ class PlacesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /places/1
-  # PATCH/PUT /places/1.json
-  def update
-    respond_to do |format|
-      if @place.update(place_params)
-        format.html { redirect_to places_path, notice: 'Place was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @place.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /places/1
-  # DELETE /places/1.json
-  def destroy
-    @place.destroy
-    respond_to do |format|
-      format.html { redirect_to places_url }
-      format.json { head :no_content }
-    end
-  end
-
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_place
@@ -75,6 +51,10 @@ class PlacesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def place_params
-      params.require(:place).permit(:name, :specification, :address, :description, :user_id)
+      params.require(:place).permit(:name, :address, :description, :user_id, :tag_list)
+    end
+
+    def authenticate!
+      redirect_to root_path unless current_user
     end
 end

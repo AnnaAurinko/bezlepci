@@ -9,11 +9,20 @@ class Admin::PlacesController < Admin::ApplicationController
   end
 
   def edit
+    @tags = {
+      'Restaurace'  => ["Bezlepkové", "Pizzerie", "Palačinkárna", "Vstřícné k BL", "Pro děti"],
+      'Obchod' => ["Bezlepkové obchody", "Rozšířená nabídka BL", "Základní nabídka BL", "Farmářské trhy"], 
+      'Pivo' => ["Pivo"],
+      'Kavarny' => ["Kavarny"]
+    }
+
     @place = Place.find(params[:id])
   end
 
   def update
     @place = Place.find(params[:id])
+    @place.tag_list = params[:tag_list]
+
     @place.update(params.require(:place).permit!)
     if @place.save
       redirect_to admin_place_path(@place), notice: "Place updated!"

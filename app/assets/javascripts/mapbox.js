@@ -1,3 +1,9 @@
+$(function() {
+  $(".select2_wrapper select").select2({
+    width: "resolve"
+  });
+});
+
 ////////////////////////////////////////
 // Declaration of the attributes
 

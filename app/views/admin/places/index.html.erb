@@ -5,7 +5,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Type</th>
+      <th>Tags</th>
       <th>Address</th>
       <th>Latitude</th>
       <th>Longitude</th>
@@ -21,7 +21,7 @@
   <% @places.each do |place| %>
     <tr>
       <td><%= place.name %></td>
-      <td><%= place.specification %></td>
+      <td><%= place.tags.map { |x| x.try(:name) } %></td>
       <td><%= place.address %></td>
       <td><%= place.latitude %></td>
       <td><%= place.longitude %></td>

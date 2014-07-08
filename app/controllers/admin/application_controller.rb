@@ -13,10 +13,6 @@ class Admin::ApplicationController < ActionController::Base
   def set_variables
     @users = User.all
     @places = Place.all
-
-    @coffee = Place.where(specification: "coffee")
-    @shop = Place.where(specification: "shop")
-    @beer = Place.where(specification: "beer")
-    @restaurant = Place.where(specification: "restaurant")
+    @actualities = Actuality.all
   end
 end

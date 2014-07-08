@@ -15,6 +15,9 @@ gem "bootstrap-sass", "~> 3.1.1"
 # gem to serialize data into json for API (you know, for the map :)
 gem "active_model_serializers"
 
+gem "acts-as-taggable-on"
+gem "select2-rails"
+
 # awesome data visualisation d3
 gem "d3-rails"
 
@@ -33,6 +36,9 @@ group :development, :test do
   gem "database_cleaner", "~> 1.2.0"
   gem "pry-rails"
   gem "pry-nav"
+
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 # Use sqlite3 as the database for Active Record

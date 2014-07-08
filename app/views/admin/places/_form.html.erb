@@ -1,8 +1,12 @@
 <%= simple_form_for [:admin, @place] do |f| %>
     <%= f.input :name, label: "Název", class: "form-control" %>
-    <%= f.input :specification, collection: ["Kavárna", "Pivo", "Restaurace", "Obchod"], label: "Typ místa" %>
     <%= f.input :address, label: "Adresa" %>
     <%= f.input :description, label: "Popisek" %>
+    <label>Tags</label>
+      <div class="select2_wrapper">
+        <%= select_tag :tag_list, grouped_options_for_select(@tags), multiple: true %>
+      </div>
+      <hr>
     <%= f.button :submit, "Vytvořit!" %>
 <% end %>
 

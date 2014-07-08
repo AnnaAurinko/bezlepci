@@ -2,6 +2,7 @@
  *= require bootstrap
  *= require_self
  *= require c3
+ *= require select2
  *= require_tree .
  */
 
@@ -14,6 +15,10 @@
 .logged-in {
     list-style: none;
     margin-top: 15px;
+}
+
+.select2-container.select2-container-multi {
+  width: 100% !important;
 }
 
 #komplet {
