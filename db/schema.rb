@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140708163025) do
+ActiveRecord::Schema.define(version: 20140712195724) do
 
   create_table "actualities", force: true do |t|
     t.string   "title"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20140708163025) do
     t.datetime "updated_at"
     t.float    "latitude"
     t.float    "longitude"
+    t.boolean  "approved"
   end
 
   create_table "taggings", force: true do |t|

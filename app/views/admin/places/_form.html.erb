@@ -6,7 +6,10 @@
       <div class="select2_wrapper">
         <%= select_tag :tag_list, grouped_options_for_select(@tags), multiple: true %>
       </div>
+    <hr>
+    <label>Approved?</label><br>
+    <%= f.collection_radio_buttons :approved, [[true, 'Yes'] ,[false, 'No']], :first, :last  %>
       <hr>
-    <%= f.button :submit, "Vytvořit!" %>
+    <%= f.button :submit, "Save", class: "btn-primary" %>
 <% end %>
 

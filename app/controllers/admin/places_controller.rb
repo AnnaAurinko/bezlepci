@@ -2,6 +2,17 @@ class Admin::PlacesController < Admin::ApplicationController
 
   def index
     @places = Place.all
+
+    if params[:filter] == "waiting"
+      @places = Place.waiting
+    elsif params[:filter] == "approved"
+      @places = Place.approved
+    elsif params[:filter] == "rejected"
+      @places = Place.rejected
+    else
+      @place = Place.all
+    end
+
   end
 
   def show
