@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
+<h1>
   <%= @actuality.title %>
-</p>
+</h1>
 
 <p>
   <strong>Body:</strong>
   <%= @actuality.body %>
 </p>
 
-<%= link_to 'Back', actualities_path %>
+<%= link_to 'Edit', edit_admin_actuality_path(@actuality) %> |
+<%= link_to 'Back', admin_actualities_path %>

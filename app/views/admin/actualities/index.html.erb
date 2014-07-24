@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+<h1>Listing Actualities</h1>
+<div class="filters">
+  <h2 class="filters">Filters:</h2>
+</div>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @actualities.each do |actuality| %>
+      <tr>
+        <td><%= actuality.title %></td>
+        <td><%= actuality.body %></td>
+        <td><%= link_to  admin_actuality_path(actuality) do %>
+              <span class="glyphicon glyphicon-search"></span>
+          <% end %>
+        </td>
+        <td><%= link_to  edit_admin_actuality_path(actuality) do %>
+              <span class="glyphicon glyphicon-pencil"></span>
+          <% end %>
+        </td>
+        <td><%= link_to  admin_actuality_path(actuality), method: :delete, data: {confirm: 'Are you sure?'} do %>
+              <span class="glyphicon glyphicon-trash"></span>
+          <% end %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Create new actuality!", new_admin_actuality_path, class: "btn btn-primary" %>

@@ -14,6 +14,7 @@ Bezlepci::Application.routes.draw do
   namespace "admin" do
     resources :places
     resources :users
+    resources :actualities
   end
 
   namespace "api" do

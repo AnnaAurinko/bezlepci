@@ -26,8 +26,9 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><%= link_to "Places", admin_places_path %></li>
+        <li><%= link_to "Places", admin_places_path %></li>
       <li><%= link_to "Users", admin_users_path %></li>
+        <li><%= link_to "Actualities", admin_actualities_path %></li>
         <li> <%= link_to "Log out", destroy_user_session_path, method: 'delete' %> </li>
       </ul>
     </div><!-- /.navbar-collapse -->

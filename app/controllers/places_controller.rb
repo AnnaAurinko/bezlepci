@@ -7,6 +7,7 @@ class PlacesController < ApplicationController
   def index
     @places = Place.all
     @new_places = Place.all.sort_by(&:created_at).reverse.take(8)
+    @actualities = Actuality.all.sort_by(&:created_at)
   end
 
   # GET /places/1
