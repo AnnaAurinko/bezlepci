@@ -20,7 +20,7 @@ class PlacesController < ApplicationController
       'Restaurace'  => ["Bezlepkové", "Pizzerie", "Palačinkárna", "Vstřícné k BL", "Pro děti"],
       'Obchod' => ["Bezlepkové obchody", "Rozšířená nabídka BL", "Základní nabídka BL", "Farmářské trhy"], 
       'Pivo' => ["Pivo"],
-      'Kavarny' => ["Kavarny"]
+      'Kavarny' => ["Kavarna"]
     }
 
     @place = Place.new
