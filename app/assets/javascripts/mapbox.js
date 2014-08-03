@@ -26,15 +26,75 @@ map = L.mapbox.map('map-canvas', 'examples.map-i86nkdio')
 ////////////////////////////////////////
 // Load JSON object
 
-$("#obchod").click(function(){
+//load shop objects
+$("#cafe").click(function(){
   $.ajax({
     dataType: 'text',
     url: 'api/places/?tags=["Kavarna"]',
     success: function(data) {
       var geojson;
       geojson = $.parseJSON(data);
-      console.log("TADYYYYYYYY")
-      console.log(geojson)
+      for(var i = 0; i < geojson.length; i++) {
+          geojson[i]["properties"]["marker-symbol"] = "cafe";
+          geojson[i]["properties"]["marker-color"] = "#1b9e77";
+      }
+
+      return map.featureLayer.setGeoJSON(geojson);
+    }
+  });
+
+});
+
+//load beer objects
+$("#beer").click(function(){
+  $.ajax({
+    dataType: 'text',
+    url: 'api/places/?tags=["Pivo"]',
+    success: function(data) {
+      var geojson;
+      geojson = $.parseJSON(data);
+      for(var i = 0; i < geojson.length; i++) {
+        geojson[i]["properties"]["marker-symbol"] = "beer";
+        geojson[i]["properties"]["marker-color"] = "#d95f02";
+      }
+      /*console.log("TADYYYYYYYY")
+      console.log(geojson)*/
+      return map.featureLayer.setGeoJSON(geojson);
+    }
+  });
+
+});
+
+//load restaurant objects
+$("#restaurant").click(function(){
+  $.ajax({
+    dataType: 'text',
+    url: 'api/places/?tags=["Restaurace"]',
+    success: function(data) {
+      var geojson;
+      geojson = $.parseJSON(data);
+      for(var i = 0; i < geojson.length; i++) {
+        geojson[i]["properties"]["marker-symbol"] = "restaurant";
+        geojson[i]["properties"]["marker-color"] = "#7570b3";
+      }
+      return map.featureLayer.setGeoJSON(geojson);
+    }
+  });
+
+});
+
+//load shops objects
+$("#shop").click(function(){
+  $.ajax({
+    dataType: 'text',
+    url: 'api/places/?tags=["Obchody"]',
+    success: function(data) {
+      var geojson;
+      geojson = $.parseJSON(data);
+      for(var i = 0; i < geojson.length; i++) {
+        geojson[i]["properties"]["marker-symbol"] = "shop";
+        geojson[i]["properties"]["marker-color"] = "#e7298a";
+      }
       return map.featureLayer.setGeoJSON(geojson);
     }
   });
