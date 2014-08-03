@@ -45,12 +45,21 @@
 
 <div class="row">
   <div class="col-md-12">
+
+    <!-- This is the filter menu -->
+    <nav class='filter-ui'>
+      <a href='#' id="shop">Obchody</a>
+      <a href='#' id="restaurant">Restaurace</a>
+      <a href='#' id="beer">Pivo</a>
+      <a href='#' id="cafe">Kavárny</a>
+    </nav> 
+
   
     <!-- This is the map -->
     <div id="map-canvas">
 
     </div>
-    <input id='search' class='search-ui' placeholder='Napiš název místa' />
+    <!-- <input id='search' class='search-ui' placeholder='Napiš název místa' /> -->
 
     <!--  Linking javascript file map.js -->
     <%= javascript_include_tag "mapbox" %>

@@ -25,32 +25,31 @@
   </br>
 
 
-  <!--zde bude logo-->
-
   <header>
     <div class="row">
+      <!--zde bude logo-->
+      <div class="col-md-9 col-md-offset-1">
+          <%= link_to places_path do %>
+            <%= image_tag 'logo2.png', class: "logo" %>
+        <% end %>
+      </div>
       <!--tabulka s registrací- přihlašováním-->
-      <div class="col-md-3 col-md-offset-8 signin">
+      <div class="col-md-2 signin">
         <% if current_user %>
             <p> Logged in as: <%= current_user.email %> </p>
             <p> <%= link_to "Log out", destroy_user_session_path, :method => :delete %> </p>
         <% else %>
-            <p> <%= link_to "Registrovat se", new_user_registration_path %> |
-              <%= link_to "Přihlásit se", new_user_session_path %></p>
+            <p> <%= link_to "Registrovat se", new_user_registration_path %></p>
+             <p> <%= link_to "Přihlásit se", new_user_session_path %></p>
         <% end %>
       </div>
 
-    <div class="row">
-      <div class="col-md-12">
-        <%= link_to places_path do %>
-            <%= image_tag 'logo.png', class: "logo" %>
-        <% end %>
-      </div>
+     <!--  </div> --> 
       <!--úvodní text-->
       <!--<div class="col-md-4 intro">-->
       <!--<h3>Pro jednodušší život bez lepku </h3>-->
       <!--</div>-->
-    </div>
+    <!-- </div> -->
 
     </div>
 
