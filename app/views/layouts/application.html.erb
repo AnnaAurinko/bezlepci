@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
   <title>Bezlepci</title>
-
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <!-- Bootstrap -->
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -13,7 +13,7 @@
   <%= trackets_include_tag %>
   <!-- MapBox API -->
   <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.js'></script>
-  <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.css' rel='stylesheet' />
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.css' rel='stylesheet'/>
   <!-- My location control Plug-in -->
   <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.24.0/L.Control.Locate.js'></script>
   <%= csrf_meta_tags %>
@@ -21,97 +21,87 @@
 
 
 <body>
-  <div id="komplet" class="col-md-8 col-md-offset-2">
+<div id="komplet" class="container-fluid">
   </br>
- 
- 
- <!--zde bude logo-->
 
-     <header class="row">
-          <div class="col-md-2">
-            <h1 align="center"><b>
-              <%= link_to "BEZLEPCI", places_path %></b>
-            </h1>
-          </div>
+
+  <!--zde bude logo-->
+
+  <header class="row">
+    <div class="col-md-2">
+      <h1 align="center"><b>
+        <%= link_to "Bezlepci", places_path %></b>
+      </h1>
+    </div>
     <!--úvodní text-->
-          <div class="col-md-6"><p>Ice cream dessert tootsie roll. Dragée pudding cheesecake biscuit. Danish unerdwear.com wafer marshmallow gummies. Jujubes halvah tootsie roll tart chocolate bar pastry chupa chups chocolate. Candy oat cake chocolate ice cream jelly oat cake. </p>
-          </div>
-<!--odkaz na stránku s informacema o projektu a tvůrcích-->
-          <div class="col-md-2">
-            <h3 align="center" data-toggle="tooltip" data-placement="top" title="Proč jsme vytvořili tento projekt a kdo jsme">
-              <%= link_to "O NÁS",pages_info_path %>
-            </h3>
-          </div>
-<!--tabulka s registrací- přihlašováním-->
-          <div class="col-md-2">
+    <div class="col-md-6">
+      <p>Ice cream dessert tootsie roll. Dragée pudding cheesecake biscuit. Danish unerdwear.com wafer marshmallow
+        gummies. Jujubes halvah tootsie roll tart chocolate bar pastry chupa chups chocolate. Candy oat cake chocolate
+        ice cream jelly oat cake. <%= link_to "Vice o nás najdete zde", pages_info_path %> </p>
+    </div>
 
+    <!--tabulka s registrací- přihlašováním-->
+    <div class="col-md-3 signin">
 
-                    <% if current_user %>
-            <li class="active">
-              <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
-            </li>
-        <% else %>
+      <% if current_user %>
+        <p> Logged in as: <%= current_user.email %> </p>
+        <p> <%= link_to "Log out", destroy_user_session_path, :method => :delete %> </p>
+      <% else %>
+          <p> <%= link_to "Registrovat se", new_user_registration_path %></p>
+          <p> <%= link_to "Přihlásit se", new_user_session_path %></p>
+      <% end %>
+    </div>
 
-            <p> <%= link_to "Registrovat se", new_user_registration_path %></p>
-            <p> <%= link_to "Přihlásit se", new_user_session_path %></p>
-        <% end %>
-      </ul>
-      <ul>
-        <% if current_user %>
-            <li class="pull-right logged-in">Logged in as: <%= current_user.email %> </li>
-        <% end %>
-          </div>
-          
-      </header>
-      
-<!--budoucí rozdělení webu- prosím nemazat-->
-<!--</br>
-<div class="row">
-  <div class="col-md-3">
-    <button type="button" class="btn btn-primary btn-lg btn-block" id="obchod">MAPA</button>
-  </div>
-  <div class="col-md-3">
-    <button type="button" class="btn btn-primary btn-lg btn-block" id="restaurace">VÝROBCI</button>
-  </div>
-  <div class="col-md-3">
-    <button type="button" class="btn btn-primary btn-lg btn-block" id="kafe">E-SHOPY</button>
-  </div>
-  <div class="col-md-3">
-    <button type="button" class="btn btn-primary btn-lg btn-block" id="pivo">BLOGY</button>
-  </div>
-</div>-->
+  </header>
 
-<div>
-  <%= yield %>
-</div>
-
-<div class="row" id="footer">
-  <div class="col-md-4">
-    <h3 align="center">
-      <%= link_to "FAQ",pages_faq_path %>
-    </h3>
-  </div>
-  <div class="col-md-4">
-    <h3 align="center">
-     <%= link_to "KONTAKTY",pages_kontakty_path %>
-    </h3>
-  </br>
-    <h4 align="center">email: bezlepci@gmail.com</h4>
-  </div>
-  <div class="col-md-4">
-    <h3 align="center">
-      <%= link_to "NAPSALI O NAS",pages_media_path %>
-     </h3>
-    <ul>
-      <li>Časopis Maminka</li>
-      <li>celiak.cz</li>
-    </ul>
-  </div>
-
+  <!--budoucí rozdělení webu- prosím nemazat-->
+  <!--</br>
   <div class="row">
-    <div class="administration"> <%= link_to "administrace", admin_places_path %> </div>
+    <div class="col-md-3">
+      <button type="button" class="btn btn-primary btn-lg btn-block" id="obchod">MAPA</button>
+    </div>
+    <div class="col-md-3">
+      <button type="button" class="btn btn-primary btn-lg btn-block" id="restaurace">VÝROBCI</button>
+    </div>
+    <div class="col-md-3">
+      <button type="button" class="btn btn-primary btn-lg btn-block" id="kafe">E-SHOPY</button>
+    </div>
+    <div class="col-md-3">
+      <button type="button" class="btn btn-primary btn-lg btn-block" id="pivo">BLOGY</button>
+    </div>
+  </div>-->
+
+  <div class="container">
+    <%= yield %>
   </div>
-</div>
+
+  <div class="row" id="footer">
+    <div class="col-md-4">
+      <h3 align="center">
+        <%= link_to "Faq", pages_faq_path %>
+      </h3>
+    </div>
+    <div class="col-md-4">
+      <h3 align="center">
+        <%= link_to "Kontakty", pages_kontakty_path %>
+      </h3>
+      <!--</br>-->
+      <!--<h4 align="center">email: bezlepci@gmail.com</h4>-->
+    </div>
+    <div class="col-md-4">
+      <h3 align="center">
+        <%= link_to "Napsali o nas", pages_media_path %>
+      </h3>
+      <!--<ul>-->
+        <!--<li>Časopis Maminka</li>-->
+        <!--<li>celiak.cz</li>-->
+      <!--</ul>-->
+    </div>
+
+    <div class="pull-right">
+      <div class="administration"> <%= link_to "administrace", admin_places_path %> </div>
+    </div>
+  </div>
 
 </div>
 </br>

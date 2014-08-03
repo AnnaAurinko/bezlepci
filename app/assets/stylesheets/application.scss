@@ -6,15 +6,28 @@
  *= require_tree .
  */
 
-.container
-  h1 {
-  // Microsofti font ktery jinde neni
-  font-family: "Trebuchet MS", "sans-serif";
+body {
+  margin:0;
+  padding:0;
+  height:100%;
+  font-family: 'Open Sans', sans-serif;
+}
+a {
+  color: dimgray;
 }
 
-.logged-in {
-    list-style: none;
-    margin-top: 15px;
+a:hover {
+  text-decoration: none;
+  color: DarkOliveGreen;
+}
+
+.container {
+  padding-bottom: 120px;
+
+  h1 {
+    // Microsofti font ktery jinde neni
+    // font-family: "Trebuchet MS", "sans-serif";
+  }
 }
 
 .select2-container.select2-container-multi {
@@ -23,6 +36,10 @@
 
 #komplet {
 	background-color: #FFFFFF;
+    min-height:100%;
+    position:relative;
+    padding: 0;
+    color: #333333;
 }
 
 
@@ -32,7 +49,6 @@
 	text-align: center;
 	border-radius: 10px;
 	box-shadow: 2px 2px 2px #888888;
-
 }
 
 #search {
@@ -72,42 +88,36 @@
 	box-shadow: 2px 2px 2px #888888;
 }
 
-#novamista{
-	height: 250px;
-	border:1px solid #AEAEA2;
-	border-radius: 10px;
-}
-
-#novinky{
-	height: 250px;
-	border:1px solid #AEAEA2;
-	border-radius: 10px;
-}
 
 #footer {
-	background-color: #AEAEA2;
-	height:250px;
-	border-radius: 10px;
+	background-color: #8b8b7f;
+    width: 100%;
+    margin: 0px;
+    position:absolute;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    color: #eee;
+
+  h3 a {
+    font-size: 18px;
+    color: #eee;
+  }
 }
 
-#komplet{
-	font-family: courier;
-	color: #333333;
-}
 
 #tfheader {
 	text-align: center;
-
 }
 
-.administration {
-  position: absolute;
-  bottom: 0;
-  right: 8px;
+#novamista ul, #novinky ul {
+  list-style: none;
 }
 
-#map-canvas {
-border-radius: 10px;
-box-shadow: 2px 2px 2px #888888;
-	
+.signin {
+  background-color: #2F7582;
+  padding: 10px;
+
+  a {
+    color: #ccc;
+  }
 }
