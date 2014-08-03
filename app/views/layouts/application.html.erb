@@ -27,29 +27,31 @@
 
   <!--zde bude logo-->
 
-  <header class="row">
-    <div class="col-md-2">
-      <h1 align="center"><b>
-        <%= link_to "Bezlepci", places_path %></b>
-      </h1>
-    </div>
-    <!--úvodní text-->
-    <div class="col-md-6">
-      <p>Ice cream dessert tootsie roll. Dragée pudding cheesecake biscuit. Danish unerdwear.com wafer marshmallow
-        gummies. Jujubes halvah tootsie roll tart chocolate bar pastry chupa chups chocolate. Candy oat cake chocolate
-        ice cream jelly oat cake. <%= link_to "Vice o nás najdete zde", pages_info_path %> </p>
+  <header>
+    <div class="row">
+      <!--tabulka s registrací- přihlašováním-->
+      <div class="col-md-3 col-md-offset-8 signin">
+        <% if current_user %>
+            <p> Logged in as: <%= current_user.email %> </p>
+            <p> <%= link_to "Log out", destroy_user_session_path, :method => :delete %> </p>
+        <% else %>
+            <p> <%= link_to "Registrovat se", new_user_registration_path %> |
+              <%= link_to "Přihlásit se", new_user_session_path %></p>
+        <% end %>
+      </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <%= link_to places_path do %>
+            <%= image_tag 'logo.png', class: "logo" %>
+        <% end %>
+      </div>
+      <!--úvodní text-->
+      <!--<div class="col-md-4 intro">-->
+      <!--<h3>Pro jednodušší život bez lepku </h3>-->
+      <!--</div>-->
     </div>
 
-    <!--tabulka s registrací- přihlašováním-->
-    <div class="col-md-3 signin">
-
-      <% if current_user %>
-        <p> Logged in as: <%= current_user.email %> </p>
-        <p> <%= link_to "Log out", destroy_user_session_path, :method => :delete %> </p>
-      <% else %>
-          <p> <%= link_to "Registrovat se", new_user_registration_path %></p>
-          <p> <%= link_to "Přihlásit se", new_user_session_path %></p>
-      <% end %>
     </div>
 
   </header>

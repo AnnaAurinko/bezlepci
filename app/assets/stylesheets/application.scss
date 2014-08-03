@@ -7,10 +7,12 @@
  */
 
 body {
+  background-color: #f8f9f7;
   margin:0;
   padding:0;
   height:100%;
   font-family: 'Open Sans', sans-serif;
+
 }
 a {
   color: dimgray;
@@ -23,6 +25,7 @@ a:hover {
 
 .container {
   padding-bottom: 120px;
+  background-color: #f8f9f7;
 
   h1 {
     // Microsofti font ktery jinde neni
@@ -40,6 +43,7 @@ a:hover {
     position:relative;
     padding: 0;
     color: #333333;
+  background-color: #f8f9f7;
 }
 
 
@@ -113,11 +117,23 @@ a:hover {
   list-style: none;
 }
 
-.signin {
+.signin a, {
   background-color: #2F7582;
   padding: 10px;
+  color: #ccc;
 
-  a {
-    color: #ccc;
-  }
+}
+
+.signin {
+  margin-top: 30px;
+}
+
+.intro {
+  margin-top: 10px;
+}
+
+.logo {
+  width: 800px;
+  margin: auto;
+  display: block;
 }
