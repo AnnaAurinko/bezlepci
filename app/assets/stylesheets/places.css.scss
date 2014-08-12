@@ -19,28 +19,37 @@
   top:10px;right:25px;
   z-index:1;
   border-radius:3px;
-  width:120px;
+  padding-left: 10px;
+  width:130px;
   border:1px solid rgba(0,0,0,0.4);
   }
 
-  .filter-ui a {
-    font-size:13px;
-    color:#404040;
-    display:block;
-    margin:0;padding:0;
-    padding:10px;
-    text-decoration:none;
-    border-bottom:1px solid rgba(0,0,0,0.25);
-    text-align:center;
-    }
 
-    .filter-ui a:hover {
-      background:#2F7582;
-      color:#FFF;
-      }
-    .filter-ui a.active {
-      background:#2F7582;
-      color:#FFF;}
+/* Checkboxes */
+label {
+  font-weight: normal;
+}
+/*input[type="checkbox"] {
+    display:none;
+}
+input[type="checkbox"] + label {
+    font-weight: normal;
+    display:inline-block;
+    width:19px;
+    height:19px;
+    padding: 2px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background:url("check_radio_sheet.png") -38px top no-repeat;
+    cursor:pointer;
+}
+input[type="checkbox"]:checked + label {
+    background:url("check_radio_sheet.png") -57px top no-repeat;
+}
+
+span{
+  padding-left: 20px;
+}*/
 
 /* Map elements */
 .search-ui {

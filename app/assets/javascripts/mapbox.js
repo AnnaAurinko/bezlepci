@@ -22,83 +22,104 @@ map = L.mapbox.map('map-canvas', 'examples.map-i86nkdio')
     .setView([mapCenterX, mapCenterY], zoom);
     L.control.locate().addTo(map);
 
+    var markerLayer = L.mapbox.featureLayer().addTo(map);
+
 
 ////////////////////////////////////////
 // Load JSON object
 
 //load shop objects
-$("#cafe").click(function(){
-  $.ajax({
-    dataType: 'text',
-    url: 'api/places/?tags=["Kavarna"]',
-    success: function(data) {
-      var geojson;
-      geojson = $.parseJSON(data);
-      for(var i = 0; i < geojson.length; i++) {
-          geojson[i]["properties"]["marker-symbol"] = "cafe";
-          geojson[i]["properties"]["marker-color"] = "#1b9e77";
+$("#cafe").change(function(){
+  if(this.checked) {
+    $.ajax({
+      dataType: 'text',
+      url: 'api/places/?tags=["Kavarna"]',
+      success: function(data) {
+        var cafeGeojson;
+        cafeGeojson = $.parseJSON(data);
+        for(var i = 0; i < cafeGeojson.length; i++) {
+            cafeGeojson[i]["properties"]["marker-symbol"] = "cafe";
+            cafeGeojson[i]["properties"]["marker-color"] = "#1b9e77";
+        }
+        return markerLayer.setGeoJSON(cafeGeojson);
       }
-
-      return map.featureLayer.setGeoJSON(geojson);
-    }
-  });
-
+    });
+  }
+  else {
+    var cafeGeojson = null;
+    return markerLayer.setGeoJSON(cafeGeojson);
+      }
 });
 
 //load beer objects
-$("#beer").click(function(){
+$("#beer").change(function(){
+  if(this.checked) {
   $.ajax({
     dataType: 'text',
     url: 'api/places/?tags=["Pivo"]',
     success: function(data) {
-      var geojson;
-      geojson = $.parseJSON(data);
-      for(var i = 0; i < geojson.length; i++) {
-        geojson[i]["properties"]["marker-symbol"] = "beer";
-        geojson[i]["properties"]["marker-color"] = "#d95f02";
+      var beerGeojson;
+      beerGeojson = $.parseJSON(data);
+      for(var i = 0; i < beerGeojson.length; i++) {
+        beerGeojson[i]["properties"]["marker-symbol"] = "beer";
+        beerGeojson[i]["properties"]["marker-color"] = "#d95f02";
       }
       /*console.log("TADYYYYYYYY")
-      console.log(geojson)*/
-      return map.featureLayer.setGeoJSON(geojson);
+      console.log(beerGeojson)*/
+      return map.featureLayer.setGeoJSON(beerGeojson);
     }
   });
-
+  }
+  else {var beerGeojson = null;
+      return map.featureLayer.setGeoJSON(beerGeojson);
+    }
 });
 
-//load restaurant objects
-$("#restaurant").click(function(){
-  $.ajax({
-    dataType: 'text',
-    url: 'api/places/?tags=["Restaurace"]',
-    success: function(data) {
-      var geojson;
-      geojson = $.parseJSON(data);
-      for(var i = 0; i < geojson.length; i++) {
-        geojson[i]["properties"]["marker-symbol"] = "restaurant";
-        geojson[i]["properties"]["marker-color"] = "#7570b3";
-      }
-      return map.featureLayer.setGeoJSON(geojson);
-    }
-  });
 
+//load restaurant objects
+$("#restaurant").change(function(){
+  if(this.checked) {
+    $.ajax({
+      dataType: 'text',
+      url: 'api/places/?tags=["Restaurace"]',
+      success: function(data) {
+        var restaurantGeojson;
+        restaurantGeojson = $.parseJSON(data);
+        for(var i = 0; i < restaurantGeojson.length; i++) {
+          restaurantGeojson[i]["properties"]["marker-symbol"] = "restaurant";
+          restaurantGeojson[i]["properties"]["marker-color"] = "#7570b3";
+        }
+        return map.featureLayer.setGeoJSON(restaurantGeojson);
+      }
+    });
+  }
+    else {
+        var restaurantGeojson = null;
+        return map.featureLayer.setGeoJSON(restaurantGeojson);
+    }
 });
 
 //load shops objects
-$("#shop").click(function(){
-  $.ajax({
-    dataType: 'text',
-    url: 'api/places/?tags=["Obchody"]',
-    success: function(data) {
-      var geojson;
-      geojson = $.parseJSON(data);
-      for(var i = 0; i < geojson.length; i++) {
-        geojson[i]["properties"]["marker-symbol"] = "shop";
-        geojson[i]["properties"]["marker-color"] = "#e7298a";
+$("#shop").change(function(){
+  if(this.checked) {
+    $.ajax({
+      dataType: 'text',
+      url: 'api/places/?tags=["Obchody"]',
+      success: function(data) {
+        var shopGeojson;
+        shopGeojson = $.parseJSON(data);
+        for(var i = 0; i < shopGeojson.length; i++) {
+          shopGeojson[i]["properties"]["marker-symbol"] = "shop";
+          shopGeojson[i]["properties"]["marker-color"] = "#e7298a";
+        }
+        return map.featureLayer.setGeoJSON(shopGeojson);
       }
-      return map.featureLayer.setGeoJSON(geojson);
-    }
-  });
-
+    });
+  }
+   else {
+        var shopGeojson = null;
+        return map.featureLayer.setGeoJSON(shopGeojson);
+      }
 });
 
 
