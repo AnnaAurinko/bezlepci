@@ -22,7 +22,10 @@ map = L.mapbox.map('map-canvas', 'examples.map-i86nkdio')
     .setView([mapCenterX, mapCenterY], zoom);
     L.control.locate().addTo(map);
 
-    var markerLayer = L.mapbox.featureLayer().addTo(map);
+    var cafeLayer = L.mapbox.featureLayer().addTo(map);
+    var beerLayer = L.mapbox.featureLayer().addTo(map);
+    var restLayer = L.mapbox.featureLayer().addTo(map);
+    var shopLayer = L.mapbox.featureLayer().addTo(map);
 
 
 ////////////////////////////////////////
@@ -35,19 +38,19 @@ $("#cafe").change(function(){
       dataType: 'text',
       url: 'api/places/?tags=["Kavarna"]',
       success: function(data) {
-        var cafeGeojson;
-        cafeGeojson = $.parseJSON(data);
-        for(var i = 0; i < cafeGeojson.length; i++) {
-            cafeGeojson[i]["properties"]["marker-symbol"] = "cafe";
-            cafeGeojson[i]["properties"]["marker-color"] = "#1b9e77";
+        var geojson;
+        geojson = $.parseJSON(data);
+        for(var i = 0; i < geojson.length; i++) {
+            geojson[i]["properties"]["marker-symbol"] = "cafe";
+            geojson[i]["properties"]["marker-color"] = "#1b9e77";
         }
-        return markerLayer.setGeoJSON(cafeGeojson);
+        return cafeLayer.setGeoJSON(geojson);
       }
     });
   }
   else {
-    var cafeGeojson = null;
-    return markerLayer.setGeoJSON(cafeGeojson);
+    var geojson = null;
+    return cafeLayer.setGeoJSON(geojson);
       }
 });
 
@@ -58,20 +61,20 @@ $("#beer").change(function(){
     dataType: 'text',
     url: 'api/places/?tags=["Pivo"]',
     success: function(data) {
-      var beerGeojson;
-      beerGeojson = $.parseJSON(data);
-      for(var i = 0; i < beerGeojson.length; i++) {
-        beerGeojson[i]["properties"]["marker-symbol"] = "beer";
-        beerGeojson[i]["properties"]["marker-color"] = "#d95f02";
+      var geojson;
+      geojson = $.parseJSON(data);
+      for(var i = 0; i < geojson.length; i++) {
+        geojson[i]["properties"]["marker-symbol"] = "beer";
+        geojson[i]["properties"]["marker-color"] = "#d95f02";
       }
       /*console.log("TADYYYYYYYY")
-      console.log(beerGeojson)*/
-      return map.featureLayer.setGeoJSON(beerGeojson);
+      console.log(geojson)*/
+      return beerLayer.setGeoJSON(geojson);
     }
   });
   }
-  else {var beerGeojson = null;
-      return map.featureLayer.setGeoJSON(beerGeojson);
+  else {var geojson = null;
+      return beerLayer.setGeoJSON(geojson);
     }
 });
 
@@ -83,19 +86,19 @@ $("#restaurant").change(function(){
       dataType: 'text',
       url: 'api/places/?tags=["Restaurace"]',
       success: function(data) {
-        var restaurantGeojson;
-        restaurantGeojson = $.parseJSON(data);
-        for(var i = 0; i < restaurantGeojson.length; i++) {
-          restaurantGeojson[i]["properties"]["marker-symbol"] = "restaurant";
-          restaurantGeojson[i]["properties"]["marker-color"] = "#7570b3";
+        var geojson;
+        geojson = $.parseJSON(data);
+        for(var i = 0; i < geojson.length; i++) {
+          geojson[i]["properties"]["marker-symbol"] = "restaurant";
+          geojson[i]["properties"]["marker-color"] = "#7570b3";
         }
-        return map.featureLayer.setGeoJSON(restaurantGeojson);
+        return restLayer.setGeoJSON(geojson);
       }
     });
   }
     else {
-        var restaurantGeojson = null;
-        return map.featureLayer.setGeoJSON(restaurantGeojson);
+        var geojson = null;
+        return restLayer.setGeoJSON(geojson);
     }
 });
 
@@ -106,27 +109,43 @@ $("#shop").change(function(){
       dataType: 'text',
       url: 'api/places/?tags=["Obchody"]',
       success: function(data) {
-        var shopGeojson;
-        shopGeojson = $.parseJSON(data);
-        for(var i = 0; i < shopGeojson.length; i++) {
-          shopGeojson[i]["properties"]["marker-symbol"] = "shop";
-          shopGeojson[i]["properties"]["marker-color"] = "#e7298a";
+        var geojson;
+        geojson = $.parseJSON(data);
+        for(var i = 0; i < geojson.length; i++) {
+          geojson[i]["properties"]["marker-symbol"] = "shop";
+          geojson[i]["properties"]["marker-color"] = "#e7298a";
         }
-        return map.featureLayer.setGeoJSON(shopGeojson);
+        return shopLayer.setGeoJSON(geojson);
       }
     });
   }
    else {
-        var shopGeojson = null;
-        return map.featureLayer.setGeoJSON(shopGeojson);
+        var geojson = null;
+        return shopLayer.setGeoJSON(geojson);
       }
+});
+
+//load all objects
+$("#all").change(function(){
+  if(this.checked) {
+    $("#beer").prop("checked", true);
+    $("#cafe").prop("checked", true);
+    $("#restaurant").prop("checked", true);
+    $("#shop").prop("checked", true);
+  }
+   else {
+    $("#beer").prop("checked", false);
+    $("#cafe").prop("checked", false);
+    $("#restaurant").prop("checked", false);
+    $("#shop").prop("checked", false);
+  }
 });
 
 
 ////////////////////////////////////////
 // Info Window
 
-map.featureLayer.on('layeradd', function(e) {
+markerLayer.on('layeradd', function(e) {
   var marker, popupContent, properties;
   marker = e.layer;
   properties = marker.feature.properties;
