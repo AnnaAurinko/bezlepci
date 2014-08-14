@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <h2><%= @place.name %></h2>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <dl class="dl-horizontal">
+      <dt>Adresa</dt>
+      <dd><%= @place.address %></dd>
+      <dt>Popis</dt>
+      <dd><%= @place.description %></dd>
+      <dt>Autor</dt>
+      <dd><%= User.find_by(@place.user_id).first_name %> <%= User.find_by(@place.user_id).last_name %>  </dd>
+    </dl>
+    <br>
+    <span class="label label-info"><%= @place.tags.map { |x| x.try(:name) }.join(", ") %></span>
+  </div>
+  <div class="col-md-6">
+    <div id="map-canvas-admin" latitude="<%= @place.latitude %>" longitude="<%= @place.longitude %>" tags="<%= @place.tags.map { |x| x.try(:name) }.join(", ") %>" name="<%= @place.name %>" >
+    <%= javascript_include_tag "admin" %>
+    </div>
+  </div>
+</div>
+

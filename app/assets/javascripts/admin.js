@@ -6,21 +6,21 @@ var zoom = 14;
 var latitude = $("#map-canvas-admin").attr("latitude")
 var longitude = $("#map-canvas-admin").attr("longitude")
 var name = $("#map-canvas-admin").attr("name")
-var specification = $("#map-canvas-admin").attr("specification")
+var specification = $("#map-canvas-admin").attr("tags")
 
 var markersymbol
 
 if (specification == "Pivo") markersymbol = "beer";
 if (specification == "Obchod") markersymbol = "shop";
-if (specification == "Kavárna") markersymbol = "cafe";
+if (specification == "Kavarny") markersymbol = "cafe";
 if (specification == "Restaurace") markersymbol = "restaurant";
 
 var markercolor = "#FAAD1E"
 
-if (specification == "Pivo") markercolor = "#2F7582";
-if (specification == "Obchod") markercolor = "#C86F73";
-if (specification == "Kavárna") markercolor = "#725421";
-if (specification == "Restaurace") markercolor = "#717135";
+if (specification == "Pivo") markercolor = "#d95f02";
+if (specification == "Obchod") markercolor = "#e7298a";
+if (specification == "Kavarny") markercolor = "#1b9e77";
+if (specification == "Restaurace") markercolor = "#7570b3";
 
 ////////////////////////////////////////
 // Initialization of the map
@@ -46,3 +46,4 @@ L.mapbox.featureLayer({
         'marker-symbol': markersymbol
     }
 }).addTo(map);
+   

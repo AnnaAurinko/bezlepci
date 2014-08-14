@@ -12,6 +12,7 @@ class PlacesController < ApplicationController
 
   # GET /places/1
   def show
+    @place = Place.find(params[:id])
   end
 
   # GET /places/new
