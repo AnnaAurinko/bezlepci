@@ -145,13 +145,19 @@ $("#all").change(function(){
 ////////////////////////////////////////
 // Info Window
 
-markerLayer.on('layeradd', function(e) {
+shopLayer.on('layeradd', function(e) {showPopup(e)});
+beerLayer.on('layeradd', function(e) {showPopup(e)});
+restLayer.on('layeradd', function(e) {showPopup(e)});
+cafeLayer.on('layeradd', function(e) {showPopup(e)});
+
+function showPopup(e) {
   var marker, popupContent, properties;
   marker = e.layer;
   properties = marker.feature.properties;
   popupContent =    '<div class="marker-title">'  + properties.name +  '</div>' + 
                     '<div class="marker-description">'  + properties.description +  '</div>' +
-                    '<div class="marker-description">' + '<i>' + properties.address + '</i>' +  '</div>';
+                    '<div class="marker-description">' + '<i>' + properties.address + '</i>' +  '</div>' +
+                    '<div class="marker-description"><a href="places/' + marker.feature.id + '">více info</a></div>';
   return marker.bindPopup(popupContent, {
     closeButton: false,
     minWidth: 150,
@@ -161,9 +167,9 @@ markerLayer.on('layeradd', function(e) {
     autoPanPaddingBottomRight: 20,
     zoomAnimation: true
   });
-});
+}
 
-
+/*
 ////////////////////////////////////////
 // Search function - NOT WORKING YET
 
@@ -176,9 +182,9 @@ $('#search').keyup(search);
 // restrictions of loading CSV files and the requirement of the csv2geojson
 // library.
 $.ajax({
-    // you will need to replace this URL with the URL to your CSV file.
-    url: '/mapbox.js/assets/data/airports.csv',
-    success: csvLoaded
+      dataType: 'text',
+      url: 'api/places/',
+      success: csvLoaded
 });
 
 // Though these functions are below the places where they're used in this
@@ -196,8 +202,8 @@ function search() {
     // here we're simply comparing the 'state' property of each marker
     // to the search string, seeing whether the former contains the latter.
     function showState(feature) {
-        return feature.properties.state
+        return feature.properties.name
             .toLowerCase()
             .indexOf(searchString) !== -1;
     }
-}
+}*/
