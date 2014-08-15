@@ -7,12 +7,12 @@
  */
 
 body {
-  background-color: #f8f9f7;
+  background: url('pozadi.png');
+  background-repeat: no-repeat;
   margin:0;
   padding:0;
   height:100%;
   font-family: 'Open Sans', sans-serif;
-
 }
 a {
   color: dimgray;
@@ -24,13 +24,9 @@ a:hover {
 }
 
 .container {
-  padding-bottom: 120px;
   background-color: #f8f9f7;
-
-  h1 {
-    // Microsofti font ktery jinde neni
-    // font-family: "Trebuchet MS", "sans-serif";
-  }
+  opacity: 0.95;
+  border-radius: 10px;
 }
 
 .select2-container.select2-container-multi {
@@ -38,14 +34,11 @@ a:hover {
 }
 
 #komplet {
-	background-color: #FFFFFF;
-    min-height:100%;
-    position:relative;
+    min-height: 100%;
+    position: relative;
     padding: 0;
     color: #333333;
-  background-color: #f8f9f7;
 }
-
 
 #titulka    {
 	background-color: #EBE8D7;
@@ -59,55 +52,17 @@ a:hover {
 	box-shadow: 2px 2px 2px #888888;
 }
 
-
-#obchod {
-	background-color: #C86F73;
-	border-color: #C86F73;
-	height: 90px;
-	border-radius: 10px;
-	box-shadow: 2px 2px 2px #888888;
-}
-
-#restaurace{
-	background-color: #717135;
-	border-color: #717135;
-	height: 90px;
-	border-radius: 10px;
-	box-shadow: 2px 2px 2px #888888;
-}
-
-#kafe {
-	background-color:#725421;
-	border-color: #725421;
-	height: 90px;
-	border-radius: 10px;
-	box-shadow: 2px 2px 2px #888888;
-}
-
-#pivo {
-	background-color:#2F7582;
-	border-color:#2F7582;
-	height: 90px;
-	border-radius: 10px;
-	box-shadow: 2px 2px 2px #888888;
-}
-
-
 #footer {
 	background-color: #8b8b7f;
-    width: 100%;
-    margin: 0px;
-    position:absolute;
-    padding-bottom: 5px;
-    padding-right: 10px;
     color: #eee;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 
   h3 a {
     font-size: 18px;
     color: #eee;
   }
 }
-
 
 #tfheader {
 	text-align: center;
@@ -121,7 +76,6 @@ a:hover {
   background-color: #2F7582;
   padding: 10px;
   color: #ccc;
-
 }
 
 .signin {
@@ -133,7 +87,18 @@ a:hover {
 }
 
 .logo {
-  width: 800px;
+  width: 900px;
   margin: auto;
+  margin-top: 100px;
+  margin-bottom: 80px;
   display: block;
+}
+
+.new-place-form {
+  margin-bottom: 70px;
+  margin-top: 50px;
+}
+
+.decoration {
+  width: 100%;
 }

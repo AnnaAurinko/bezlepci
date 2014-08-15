@@ -21,10 +21,10 @@ class Admin::PlacesController < Admin::ApplicationController
 
   def edit
     @tags = {
-      'Restaurace'  => ["Bezlepkové", "Pizzerie", "Palačinkárna", "Vstřícné k BL", "Pro děti"],
-      'Obchod' => ["Bezlepkové obchody", "Rozšířená nabídka BL", "Základní nabídka BL", "Farmářské trhy"], 
-      'Pivo' => ["Pivo"],
-      'Kavarny' => ["Kavarna"]
+        Restaurace: ["Bezlepkové", "Pizzerie", "Palačinkárna", "Vstřícné k BL", "Pro děti"],
+        Obchod: ["Bezlepkové obchody", "Rozšířená nabídka BL", "Základní nabídka BL", "Farmářské trhy"],
+        Pivo: ["Pivo"],
+        Kavárna: ["Kavarna"]
     }
 
     @place = Place.find(params[:id])

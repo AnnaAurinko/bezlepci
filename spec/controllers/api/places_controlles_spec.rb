@@ -16,6 +16,7 @@ describe Api::PlacesController do
       place3.save
 
       get :index, tags: ["Restaurace"]
+
       JSON.parse(response.body).count.should eql(1)
 
       get :index, tags: ["Pivo", "Obchod", "Restaurace"]

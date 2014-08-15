@@ -17,10 +17,10 @@ class PlacesController < ApplicationController
   # GET /places/new
   def new
     @tags = {
-      'Restaurace'  => ["Bezlepkové", "Pizzerie", "Palačinkárna", "Vstřícné k BL", "Pro děti"],
-      'Obchod' => ["Bezlepkové obchody", "Rozšířená nabídka BL", "Základní nabídka BL", "Farmářské trhy"], 
-      'Pivo' => ["Pivo"],
-      'Kavarny' => ["Kavarna"]
+      Restaurace: ["Bezlepkové", "Pizzerie", "Palačinkárna", "Vstřícné k BL", "Pro děti"],
+      Obchod: ["Bezlepkové obchody", "Rozšířená nabídka BL", "Základní nabídka BL", "Farmářské trhy"],
+      Pivo: ["Pivo"],
+      Kavárna: ["Kavárna"]
     }
 
     @place = Place.new

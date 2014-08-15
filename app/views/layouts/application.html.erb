@@ -28,11 +28,12 @@
   <header>
     <div class="row">
       <!--zde bude logo-->
-      <div class="col-md-9 col-md-offset-1">
+      <div class="col-md-offset-3 col-md-6">
           <%= link_to places_path do %>
-            <%= image_tag 'logo2.png', class: "logo" %>
+            <%= image_tag 'nadpis.png', class: "logo" %>
         <% end %>
       </div>
+
       <!--tabulka s registrací- přihlašováním-->
       <div class="col-md-2 signin">
         <% if current_user %>
@@ -43,65 +44,34 @@
              <p> <%= link_to "Přihlásit se", new_user_session_path %></p>
         <% end %>
       </div>
-
-     <!--  </div> --> 
-      <!--úvodní text-->
-      <!--<div class="col-md-4 intro">-->
-      <!--<h3>Pro jednodušší život bez lepku </h3>-->
-      <!--</div>-->
-    <!-- </div> -->
-
     </div>
-
   </header>
-
-  <!--budoucí rozdělení webu- prosím nemazat-->
-  <!--</br>
-  <div class="row">
-    <div class="col-md-3">
-      <button type="button" class="btn btn-primary btn-lg btn-block" id="obchod">MAPA</button>
-    </div>
-    <div class="col-md-3">
-      <button type="button" class="btn btn-primary btn-lg btn-block" id="restaurace">VÝROBCI</button>
-    </div>
-    <div class="col-md-3">
-      <button type="button" class="btn btn-primary btn-lg btn-block" id="kafe">E-SHOPY</button>
-    </div>
-    <div class="col-md-3">
-      <button type="button" class="btn btn-primary btn-lg btn-block" id="pivo">BLOGY</button>
-    </div>
-  </div>-->
-
+  <%= image_tag 'pas.png', class: "decoration" %>
   <div class="container">
     <%= yield %>
-  </div>
 
-  <div class="row" id="footer">
-    <div class="col-md-4">
-      <h3 align="center">
-        <%= link_to "Faq", pages_faq_path %>
-      </h3>
-    </div>
-    <div class="col-md-4">
-      <h3 align="center">
-        <%= link_to "Kontakty", pages_kontakty_path %>
-      </h3>
-      <!--</br>-->
-      <!--<h4 align="center">email: bezlepci@gmail.com</h4>-->
-    </div>
-    <div class="col-md-4">
-      <h3 align="center">
-        <%= link_to "Napsali o nas", pages_media_path %>
-      </h3>
-      <!--<ul>-->
-        <!--<li>Časopis Maminka</li>-->
-        <!--<li>celiak.cz</li>-->
-      <!--</ul>-->
+    <div class="row" id="footer">
+      <div class="col-md-4">
+        <h3 align="center">
+          <%= link_to "Faq", pages_faq_path %>
+        </h3>
+      </div>
+      <div class="col-md-4">
+        <h3 align="center">
+          <%= link_to "Kontakty", pages_kontakty_path %>
+        </h3>
+      </div>
+      <div class="col-md-4">
+        <h3 align="center">
+          <%= link_to "Napsali o nas", pages_media_path %>
+        </h3>
+      </div>
+
+      <div class="pull-right">
+        <div class="administration"> <%= link_to "administrace", admin_places_path %> </div>
+      </div>
     </div>
 
-    <div class="pull-right">
-      <div class="administration"> <%= link_to "administrace", admin_places_path %> </div>
-    </div>
   </div>
 
 </div>

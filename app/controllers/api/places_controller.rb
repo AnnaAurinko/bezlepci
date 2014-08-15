@@ -1,23 +1,14 @@
 class Api::PlacesController < ApplicationController
   def index
     place = []
+    tags = ["Restaurace", "Obchod", "Bezlepkové", "Pizzerie", "Palačinkárna", "Vstřícné k BL", "Pro děti", "Bezlepkové obchody", "Rozšířená nabídka BL", "Základní nabídka BL", "Farmářské trhy", "Pivo", "Kavárna"]
 
-    if params[:tags] && params[:tags].include?("Restaurace")
-      place << Place.tagged_with("Restaurace")
+    tags.each do |tag|
+      if params[:tags] && params[:tags].include?(tag)
+        place << Place.tagged_with(tag)
+      end
     end
 
-    if params[:tags] && params[:tags].include?("Obchod")
-      place << Place.tagged_with("Obchod") 
-    end
-
-    if params[:tags] && params[:tags].include?("Pivo")
-      place << Place.tagged_with("Pivo") 
-    end
-
-    if params[:tags] && params[:tags].include?("Kavarna")
-      place << Place.tagged_with("Kavarna")
-    end 
-    
     unless params[:tags]
       place = Place.all
     end
