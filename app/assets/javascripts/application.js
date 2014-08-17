@@ -15,4 +15,13 @@
 //= require bootstrap
 //= require d3
 //= require c3
+//= require select2
 //= require_tree .
+
+$(function() {
+  $(".select2_wrapper select").select2({
+    width: "resolve"
+  });
+});
+
+

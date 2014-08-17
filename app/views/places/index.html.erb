@@ -51,7 +51,10 @@
   <div class="col-md-12">
   
     <!-- This is the map -->
-    <div id="map-canvas"></div>
+    <div id="map-canvas">
+
+
+    </div>
     <input id='search' class='search-ui' placeholder='Napiš název místa' />
 
     <!--  Linking javascript file map.js -->
@@ -72,12 +75,13 @@
       </div>
     </div>
     <div class="col-md-6" id="novinky"><h3 align="center">novinky</h3>
-      <!--toto je jen pro představu pak smazat-->
-      <p>Bonbon gummi bears sugar plum lemon drops chocolate macaroon brownie jelly macaroon. Pie oat cake gummi bears liquorice. Cupcake sweet cotton candy danish. Jujuear.com.</p>
-      <p>Sweet roll sugar plum icing jelly beans. Brownie tart une sweet roll. Fruitcake candy canes dessert pudding dessert gingerbread sesame snaps. Brownie dragée applicake.</p>
-      <br>
+      <ul>
+        <% @actualities.each do |act| %>
+            <li><%= act.title %> - <%= act.body %></li>
+        <% end %>
+      </ul>
        <ul class="pager">
-          <li class="next"><a href="#"><%= link_to "Dřívější",actualities_path %></a></li>
+          <li class="next"><a href="#"><%= link_to "Dřívější", actualities_path %></a></li>
         </ul>
 
 

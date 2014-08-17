@@ -29,9 +29,16 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    acts-as-taggable-on (3.2.6)
+      activerecord (>= 3, < 5)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
     bcrypt (3.1.7-x86-mingw32)
+    better_errors (1.1.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
     builder (3.2.2)
@@ -48,6 +55,7 @@ GEM
     d3-rails (3.4.4)
       railties (>= 3.1)
     database_cleaner (1.2.0)
+    debug_inspector (0.0.2)
     devise (3.2.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -140,6 +148,9 @@ GEM
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
+    select2-rails (3.4.7)
+      sass-rails
+      thor (~> 0.14)
     simple_form (3.1.0.rc1)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
@@ -164,7 +175,7 @@ GEM
     thread_safe (0.3.3)
     tilt (1.4.1)
     timers (1.1.0)
-    trackets (0.0.5)
+    trackets (0.0.6)
       httparty (~> 0.13)
       json
       rack
@@ -189,6 +200,9 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
+  acts-as-taggable-on
+  better_errors
+  binding_of_caller
   bootstrap-sass (~> 3.1.1)
   coffee-rails
   d3-rails
@@ -204,6 +218,7 @@ DEPENDENCIES
   rspec-rails (~> 2.14.2)
   sass-rails (>= 3.2)
   sdoc
+  select2-rails
   simple_form (~> 3.1.0.rc1)
   spring
   spring-commands-rspec

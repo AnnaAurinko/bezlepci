@@ -1,16 +1,30 @@
 <p id="notice"><%= notice %></p>
 <h1>Listing places</h1>
+<div class="filters">
+   <h2 class="filters">Filters:</h2>
+   <%= link_to admin_places_path do %>
+    <button class="btn btn-default">All</button>
+  <% end %>
+  <%= link_to admin_places_path(filter: "waiting") do %>
+    <button class="btn btn-default">Waiting for approval </button>
+  <% end %>
+  <%= link_to admin_places_path(filter: "approved") do %>
+    <button class="btn btn-default">Approved </button>
+  <% end %>
+  <%= link_to admin_places_path(filter: "rejected") do %>
+    <button class="btn btn-default">Rejected </button>
+  <% end %>
+</div>
 
 <table class="table">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Type</th>
+      <th>Tags</th>
       <th>Address</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
       <th>Description</th>
       <th>Author</th>
+      <th>Approved</th>
       <th></th>
       <th></th>
       <th></th>
@@ -21,15 +35,27 @@
   <% @places.each do |place| %>
     <tr>
       <td><%= place.name %></td>
-      <td><%= place.specification %></td>
+      <td><%= place.tags.map { |x| x.try(:name) }.join(", ") %></td>
       <td><%= place.address %></td>
-      <td><%= place.latitude %></td>
-      <td><%= place.longitude %></td>
       <td><%= place.description %></td>
-      <td><%= place.user_id %></td>
-      <td><%= link_to 'Show', admin_place_path(place) %></td>
-      <td><%= link_to 'Edit', edit_admin_place_path(place) %></td>
-      <td><%= link_to 'Destroy', admin_place_path(place), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      <td><%= User.find(place.user_id).email if place.user_id %></td>
+      <td>
+        <% if !place.approved.nil? %>
+          <span class="label label-<%= place.approved ? "success" : "danger" %>"><%= place.approved %></span>
+        <% end %>
+      </td>
+      <td><%= link_to  admin_place_path(place) do %>
+        <span class="glyphicon glyphicon-search"></span>
+      <% end %>
+      </td>
+        <td><%= link_to  edit_admin_place_path(place) do %>
+          <span class="glyphicon glyphicon-pencil"></span>
+      <% end %>
+        </td>
+        <td><%= link_to  admin_place_path(place), method: :delete, data: {confirm: 'Are you sure?'} do %>
+          <span class="glyphicon glyphicon-trash"></span>
+      <% end %>
+        </td>
     </tr>
   <% end %>
   </tbody>

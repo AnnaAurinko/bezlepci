@@ -2,6 +2,17 @@ class Admin::PlacesController < Admin::ApplicationController
 
   def index
     @places = Place.all
+
+    if params[:filter] == "waiting"
+      @places = Place.waiting
+    elsif params[:filter] == "approved"
+      @places = Place.approved
+    elsif params[:filter] == "rejected"
+      @places = Place.rejected
+    else
+      @place = Place.all
+    end
+
   end
 
   def show
@@ -9,11 +20,37 @@ class Admin::PlacesController < Admin::ApplicationController
   end
 
   def edit
+    @tags = {
+      'Restaurace'  => ["Bezlepkové", "Pizzerie", "Palačinkárna", "Vstřícné k BL", "Pro děti"],
+      'Obchod' => ["Bezlepkové obchody", "Rozšířená nabídka BL", "Základní nabídka BL", "Farmářské trhy"], 
+      'Pivo' => ["Pivo"],
+      'Kavarny' => ["Kavarna"]
+    }
+
     @place = Place.find(params[:id])
   end
 
   def update
     @place = Place.find(params[:id])
+    @place.tag_list = params[:tag_list]
+   
+    restaurants = ["Bezlepkové", "Pizzerie", "Palačinkárna", "Vstřícné k BL", "Pro děti"]
+    shops = ["Bezlepkové obchody", "Rozšířená nabídka BL", "Základní nabídka BL", "Farmářské trhy"]
+
+    if params[:tag_list]
+      restaurants.each do |tag|
+        if params[:tag_list].include?(tag)
+          @place.tag_list << "Restaurace" 
+        end
+      end
+
+      shops.each do |tag|
+        if params[:tag_list].include?(tag)
+          @place.tag_list << "Obchod"
+        end
+      end
+    end
+   
     @place.update(params.require(:place).permit!)
     if @place.save
       redirect_to admin_place_path(@place), notice: "Place updated!"

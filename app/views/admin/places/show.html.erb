@@ -6,8 +6,8 @@
 </p>
 
 <p>
-  <strong>Type:</strong>
-  <%= @place.specification %>
+  <strong>Tags:</strong>
+  <%= @place.tags.map { |x| x.try(:name) }.join(", ") %>
 </p>
 
 <p>
@@ -33,9 +33,14 @@
 <p>
   <strong>Author:</strong>
   <%= User.find_by(@place.user_id).first_name %> <%= User.find_by(@place.user_id).last_name %>
+  </p>
+ 
+ <p>
+  <strong>Approved?</strong>
+  <%= @place.approved %>
 </p>
 
-<div id="map-canvas-admin" latitude="<%= @place.latitude %>" longitude="<%= @place.longitude %>" name="<%= @place.name %>" specification="<%= @place.specification %>" >
+<div id="map-canvas-admin" latitude="<%= @place.latitude %>" longitude="<%= @place.longitude %>" name="<%= @place.name %>" >
 <%= javascript_include_tag "admin" %>
 </div>
 

@@ -1,27 +1,24 @@
 Bezlepci::Application.routes.draw do
   resources :actualities
 
-  resources :novinkies
-
   get 'pages/info'
-
   get 'pages/kontakty'
-
   get 'pages/media'
-
   get 'pages/faq'
 
   devise_for :users
-  resources :places
+  resources :places, only: [:show, :index, :new, :create]
   resources :comments
   root to: 'places#index'
 
   namespace "admin" do
     resources :places
+    resources :users
+    resources :actualities
   end
 
   namespace "api" do
-    resources :places
+    resources :places, only: :index
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

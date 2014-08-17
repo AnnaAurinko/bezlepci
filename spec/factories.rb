@@ -11,7 +11,6 @@ FactoryGirl.define do
 
   factory :place do
     name "Country Life"
-    specification "restaurant"
     address "Manesova 25, Praha 1, 110 00"
     description "Nejlepsi bio restaurace v sirokem okoli!"
   end

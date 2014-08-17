@@ -1,6 +1,6 @@
 <h1>Co se stalo nového</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
@@ -15,8 +15,6 @@
         <td><%= actuality.title %></td>
         <td><%= actuality.body %></td>
         <td><%= link_to 'Show', actuality %></td>
-        <td><%= link_to 'Edit', edit_actuality_path(actuality) %></td>
-        <td><%= link_to 'Destroy', actuality, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +22,3 @@
 
 <br>
 
-<%= link_to 'New Actuality', new_actuality_path %>

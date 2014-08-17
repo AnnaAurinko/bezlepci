@@ -1,3 +1,9 @@
+$(function() {
+  $(".select2_wrapper select").select2({
+    width: "resolve"
+  });
+});
+
 ////////////////////////////////////////
 // Declaration of the attributes
 
@@ -20,15 +26,19 @@ map = L.mapbox.map('map-canvas', 'examples.map-i86nkdio')
 ////////////////////////////////////////
 // Load JSON object
 
+$("#obchod").click(function(){
+  $.ajax({
+    dataType: 'text',
+    url: 'api/places/?tags=["Kavarna"]',
+    success: function(data) {
+      var geojson;
+      geojson = $.parseJSON(data);
+      console.log("TADYYYYYYYY")
+      console.log(geojson)
+      return map.featureLayer.setGeoJSON(geojson);
+    }
+  });
 
-$.ajax({
-  dataType: 'text',
-  url: 'api/places',
-  success: function(data) {
-    var geojson;
-    geojson = $.parseJSON(data);
-    return map.featureLayer.setGeoJSON(geojson);
-  }
 });
 
 

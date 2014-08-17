@@ -14,3 +14,25 @@
 	height: 300px;
 	width: 300px;
 }
+
+.collection_radio_buttons {
+  margin: 0 20px 0 5px;
+}
+
+h2.filters {
+  display: inline;
+  margin-right: 10px;
+  padding: 0;
+  font-size: 18px;
+}
+
+.filters {
+  background-color: #c86f73;
+  font-size: 18px;
+  padding: 20px;
+  color: white;
+}
+
+.filters button:hover {
+  background-color: #d4b4b6;
+}

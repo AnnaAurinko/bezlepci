@@ -1,0 +1,8 @@
+<%= simple_form_for [:admin, @user] do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :email  %>
+
+    <%= f.button :submit, "Save", class: "btn-primary" %>
+<% end %>
+
