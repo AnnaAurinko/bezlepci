@@ -36,7 +36,7 @@ $("#cafe").change(function(){
   if(this.checked) {
     $.ajax({
       dataType: 'text',
-      url: 'api/places/?tags=["Kavarna"]',
+      url: 'api/places/?tags=["Kavárna"]',
       success: function(data) {
         var geojson;
         geojson = $.parseJSON(data);

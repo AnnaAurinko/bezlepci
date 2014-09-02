@@ -24,7 +24,7 @@ class Admin::PlacesController < Admin::ApplicationController
         Restaurace: ["Bezlepkové", "Pizzerie", "Palačinkárna", "Vstřícné k BL", "Pro děti"],
         Obchod: ["Bezlepkové obchody", "Rozšířená nabídka BL", "Základní nabídka BL", "Farmářské trhy"],
         Pivo: ["Pivo"],
-        Kavárna: ["Kavarna"]
+        Kavárna: ["Kavárna"]
     }
 
     @place = Place.find(params[:id])
